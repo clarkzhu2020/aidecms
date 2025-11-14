@@ -4,6 +4,7 @@ import (
 	"context"
 
 	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/clarkgo/clarkgo/routes"
 )
 
 func main() {
@@ -14,9 +15,12 @@ func main() {
 		SetDebug(true).
 		Boot()
 
-	// 注册路由
+	// 注册API路由
+	routes.APIRoutes(app)
+
+	// 注册其他路由
 	app.RegisterRoutes(func(router *framework.Router) {
-		// API路由
+		// 基本API路由
 		api := router.Group("/api")
 		{
 			api.GET("/ping", func(ctx context.Context, c *framework.RequestContext) {
@@ -28,7 +32,7 @@ func main() {
 
 		// Web路由
 		router.GET("/", func(ctx context.Context, c *framework.RequestContext) {
-			c.String(200, "Welcome to ClarkGo!")
+			c.String(200, "Welcome to ClarkGo with AI capabilities! See /doc/ai.md for AI integration guide.")
 		})
 	})
 

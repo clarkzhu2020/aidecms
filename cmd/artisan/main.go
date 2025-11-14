@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/clarkgo/clarkgo/cmd/artisan/commands"
@@ -64,6 +65,11 @@ func runArtisan() {
 	args := os.Args[2:]
 
 	switch command {
+	case "ai:setup", "ai:chat", "ai:completion", "ai:models", "ai:test", "ai:config":
+		// 将 ai: 前缀的命令传递给AI命令处理器
+		aiArgs := []string{strings.TrimPrefix(command, "ai:")}
+		aiArgs = append(aiArgs, args...)
+		commands.HandleAICommand(aiArgs)
 	case "make:command":
 		generator.NewCommand().Handle(args)
 	case "make:controller":
@@ -159,6 +165,13 @@ func showHelp() {
 	fmt.Println("  make:middleware <name>\tCreate a new middleware")
 	fmt.Println("  migrate\t\tRun database migrations")
 	fmt.Println("  help\t\t\tShow this help message")
+	fmt.Println("\nAI commands:")
+	fmt.Println("  ai:setup <provider> <api_key>\tSetup AI configuration")
+	fmt.Println("  ai:chat <message> [model]\tChat with AI")
+	fmt.Println("  ai:completion <prompt> [model]\tText completion")
+	fmt.Println("  ai:models\t\t\tList available models")
+	fmt.Println("  ai:test [model]\t\tTest AI connection")
+	fmt.Println("  ai:config <action>\t\tManage AI configurations")
 	fmt.Println("\nStatistics commands:")
 	fmt.Println("  stats:show\t\tShow command usage statistics")
 	fmt.Println("  stats:reset\t\tReset command statistics")

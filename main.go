@@ -3,9 +3,31 @@ package main
 import (
 	"context"
 
+	_ "github.com/clarkgo/clarkgo/docs" // Swagger docs
 	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/clarkgo/clarkgo/pkg/swagger"
 	"github.com/clarkgo/clarkgo/routes"
 )
+
+// @title           ClarkGo CMS API
+// @version         1.0
+// @description     ClarkGo CMS API文档 - 基于Hertz框架的高性能内容管理系统
+// @termsOfService  http://swagger.io/terms/
+
+// @contact.name   API Support
+// @contact.url    http://www.swagger.io/support
+// @contact.email  support@clarkgo.com
+
+// @license.name  MIT
+// @license.url   https://opensource.org/licenses/MIT
+
+// @host      localhost:8888
+// @BasePath  /api
+
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
+// @description Type "Bearer" followed by a space and JWT token.
 
 func main() {
 	// 创建并启动应用实例
@@ -20,6 +42,9 @@ func main() {
 
 	// 注册其他路由
 	app.RegisterRoutes(func(router *framework.Router) {
+		// Swagger文档路由 - 访问 http://localhost:8888/swagger/index.html
+		router.GET("/swagger/*any", swagger.SwaggerHandler())
+
 		// 基本API路由
 		api := router.Group("/api")
 		{

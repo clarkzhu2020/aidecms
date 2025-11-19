@@ -16,6 +16,10 @@ type User struct {
 	LastName  string     `gorm:"size:100" json:"last_name"`
 	Avatar    string     `gorm:"size:255" json:"avatar"`
 	LastLogin *time.Time `json:"last_login"`
+	Status    string     `gorm:"size:20;default:'active'" json:"status"` // active, inactive, banned
+
+	// 关联
+	Roles []Role `gorm:"many2many:user_roles;" json:"roles,omitempty"`
 }
 
 // UserProfile 用户资料（不包含敏感信息）
@@ -44,4 +48,39 @@ func (u *User) ToProfile() UserProfile {
 		UpdatedAt: u.UpdatedAt,
 		LastLogin: u.LastLogin,
 	}
+}
+
+// HasRole 检查用户是否有指定角色
+func (u *User) HasRole(roleName string) bool {
+	for _, role := range u.Roles {
+		if role.Name == roleName {
+			return true
+		}
+	}
+	return false
+}
+
+// HasPermission 检查用户是否有指定权限
+func (u *User) HasPermission(permissionName string) bool {
+	for _, role := range u.Roles {
+		if role.HasPermission(permissionName) {
+			return true
+		}
+	}
+	return false
+}
+
+// HasResourcePermission 检查用户是否有资源的指定操作权限
+func (u *User) HasResourcePermission(resource, action string) bool {
+	for _, role := range u.Roles {
+		if role.HasResourcePermission(resource, action) {
+			return true
+		}
+	}
+	return false
+}
+
+// IsAdmin 检查用户是否为管理员
+func (u *User) IsAdmin() bool {
+	return u.HasRole("admin") || u.HasRole("super_admin")
 }

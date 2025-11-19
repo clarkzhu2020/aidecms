@@ -33,11 +33,24 @@ type Database struct {
 	Config *Config
 }
 
+// 全局数据库实例
+var globalDB *gorm.DB
+
 // NewDatabase 创建一个新的数据库连接管理器
 func NewDatabase(config *Config) *Database {
 	return &Database{
 		Config: config,
 	}
+}
+
+// SetDB 设置全局数据库实例
+func SetDB(db *gorm.DB) {
+	globalDB = db
+}
+
+// GetDB 获取全局数据库实例
+func GetDB() *gorm.DB {
+	return globalDB
 }
 
 // Connect 连接数据库

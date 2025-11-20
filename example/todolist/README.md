@@ -1,6 +1,6 @@
 # TodoList 示例应用
 
-这是一个使用ClarkGo框架开发的TodoList示例应用，展示了如何构建一个简单的RESTful API。
+这是一个使用AideCMS框架开发的TodoList示例应用，展示了如何构建一个简单的RESTful API。
 
 ## 功能特性
 

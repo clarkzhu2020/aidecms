@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/clarkgo/clarkgo/pkg/ai"
-	envConfig "github.com/clarkgo/clarkgo/pkg/config"
+	"github.com/chenyusolar/aidecms/pkg/ai"
+	envConfig "github.com/chenyusolar/aidecms/pkg/config"
 )
 
 // AIConfig AI配置结构

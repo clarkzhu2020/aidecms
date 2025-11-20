@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/clarkgo/clarkgo/pkg/health"
+	"github.com/chenyusolar/aidecms/pkg/health"
 )
 
 // HealthCommand demonstrates health check functionality

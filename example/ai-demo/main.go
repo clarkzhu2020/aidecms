@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/clarkgo/clarkgo/pkg/ai"
+	"github.com/chenyusolar/aidecms/pkg/ai"
 )
 
 func main() {
-	fmt.Println("ClarkGo AI Demo")
+	fmt.Println("AideCMS AI Demo")
 	fmt.Println("===============")
 
 	// 创建 AI 管理器
@@ -76,7 +76,7 @@ const chatHTML = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClarkGo AI Chat</title>
+    <title>AideCMS AI Chat</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -151,7 +151,7 @@ const chatHTML = `
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h2>ClarkGo AI Chat Demo</h2>
+            <h2>AideCMS AI Chat Demo</h2>
             <p>基于 CloudWeGo Eino 的 AI 聊天演示</p>
         </div>
         <div class="chat-messages" id="messages"></div>
@@ -222,7 +222,7 @@ const chatHTML = `
         }
 
         // 页面加载时的欢迎消息
-        addMessage('你好！我是 ClarkGo AI 助手。请问有什么可以帮助您的？', false);
+        addMessage('你好！我是 AideCMS AI 助手。请问有什么可以帮助您的？', false);
     </script>
 </body>
 </html>

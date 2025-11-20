@@ -2,7 +2,7 @@
 
 ## 📚 概述
 
-ClarkGo CMS 已集成 Swagger UI，提供交互式 API 文档界面。
+AideCMS CMS 已集成 Swagger UI，提供交互式 API 文档界面。
 
 ## 🚀 访问 Swagger UI
 
@@ -127,10 +127,10 @@ go install github.com/swaggo/swag/cmd/swag@latest
 swag init -g main.go --output ./docs
 
 # 重新编译项目
-go build -o clarkgo main.go
+go build -o aidecms main.go
 
 # 启动服务
-./clarkgo
+./aidecms
 ```
 
 ## 📐 添加 Swagger 注解示例

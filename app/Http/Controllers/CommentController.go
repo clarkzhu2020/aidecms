@@ -5,10 +5,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/clarkgo/clarkgo/internal/app/models"
-	"github.com/clarkgo/clarkgo/pkg/database"
-	"github.com/clarkgo/clarkgo/pkg/response"
-	"github.com/clarkgo/clarkgo/pkg/validator"
+	"github.com/chenyusolar/aidecms/internal/app/models"
+	"github.com/chenyusolar/aidecms/pkg/database"
+	"github.com/chenyusolar/aidecms/pkg/response"
+	"github.com/chenyusolar/aidecms/pkg/validator"
 	"github.com/cloudwego/hertz/pkg/app"
 	"gorm.io/gorm"
 )

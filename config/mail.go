@@ -6,7 +6,7 @@ import (
 	"net/smtp"
 	"strconv"
 
-	envConfig "github.com/clarkgo/clarkgo/pkg/config"
+	envConfig "github.com/chenyusolar/aidecms/pkg/config"
 )
 
 // MailConfig 邮件配置
@@ -37,7 +37,7 @@ func LoadMailConfig() (*MailConfig, error) {
 		Username:   envConfig.GetEnv("MAIL_USERNAME", ""),
 		Password:   envConfig.GetEnv("MAIL_PASSWORD", ""),
 		Encryption: envConfig.GetEnv("MAIL_ENCRYPTION", "tls"),
-		FromName:   envConfig.GetEnv("MAIL_FROM_NAME", "ClarkGo"),
+		FromName:   envConfig.GetEnv("MAIL_FROM_NAME", "AideCMS"),
 		FromEmail:  envConfig.GetEnv("MAIL_FROM_ADDRESS", "noreply@example.com"),
 	}
 

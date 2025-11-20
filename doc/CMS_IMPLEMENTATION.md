@@ -1,8 +1,8 @@
-# ClarkGo CMS 功能完善总结
+# AideCMS CMS 功能完善总结
 
 ## 🎉 Phase 1 核心功能已完成！
 
-本次更新为ClarkGo框架添加了完整的CMS（内容管理系统）支持，包括文件上传、权限管理、内容管理等核心功能。
+本次更新为AideCMS框架添加了完整的CMS（内容管理系统）支持，包括文件上传、权限管理、内容管理等核心功能。
 
 ---
 
@@ -277,7 +277,7 @@ github.com/gosimple/slug               // URL Slug生成
 go mod tidy
 
 # 编译项目
-go build -o clarkgo main.go
+go build -o aidecms main.go
 
 # 初始化CMS数据库
 go run cmd/artisan/main.go cms:init
@@ -286,7 +286,7 @@ go run cmd/artisan/main.go cms:init
 ### 2. 启动服务
 
 ```bash
-./clarkgo
+./aidecms
 # 或
 go run main.go
 ```
@@ -452,4 +452,4 @@ response.ServerError(hCtx, "Internal error")
 
 如有问题或建议，请提交Issue或联系开发团队。
 
-**ClarkGo现已具备完整的CMS开发能力！** 🎉
+**AideCMS现已具备完整的CMS开发能力！** 🎉

@@ -41,7 +41,7 @@ type Session struct {
 // 默认配置
 var defaultConfig = &SessionConfig{
 	Driver:          "memory",
-	CookieName:      "clarkgo_session",
+	CookieName:      "aidecms_session",
 	CookieDomain:    "",
 	SecureCookie:    false,
 	HTTPOnlyCookie:  true,

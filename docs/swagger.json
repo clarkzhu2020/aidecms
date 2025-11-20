@@ -1,13 +1,13 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "ClarkGo CMS API文档 - 基于Hertz框架的高性能内容管理系统",
-        "title": "ClarkGo CMS API",
+        "description": "AideCMS API文档 - 基于Hertz框架的高性能内容管理系统",
+        "title": "AideCMS API",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
             "name": "API Support",
             "url": "http://www.swagger.io/support",
-            "email": "support@clarkgo.com"
+            "email": "support@aidecms.com"
         },
         "license": {
             "name": "MIT",

@@ -1,4 +1,4 @@
-# ClarkGo 快速参考手册
+# AideCMS 快速参考手册
 
 ## Artisan 命令速查
 
@@ -64,7 +64,7 @@ artisan health demo
 
 #### 基础用法
 ```go
-import "github.com/clarkgo/clarkgo/pkg/schedule"
+import "github.com/chenyusolar/aidecms/pkg/schedule"
 
 // 每分钟执行
 schedule.EveryMinute().Do(func() {
@@ -105,7 +105,7 @@ stats := schedule.GetStats()
 
 #### 基础用法
 ```go
-import "github.com/clarkgo/clarkgo/pkg/queue"
+import "github.com/chenyusolar/aidecms/pkg/queue"
 
 // 定义任务
 type EmailJob struct {
@@ -135,7 +135,7 @@ queue.Work(ctx, "emails", 5) // 5个并发 workers
 
 #### Redis 配置
 ```go
-import "github.com/clarkgo/clarkgo/pkg/queue"
+import "github.com/chenyusolar/aidecms/pkg/queue"
 
 // 使用 Redis 驱动
 redisQueue := queue.NewRedisDriver(redisClient, "myapp")
@@ -151,7 +151,7 @@ queue.Push("default", job)
 
 #### 基础用法
 ```go
-import "github.com/clarkgo/clarkgo/pkg/event"
+import "github.com/chenyusolar/aidecms/pkg/event"
 
 // 注册监听器 (同步)
 event.Listen("user.registered", func(e event.Event) error {
@@ -208,7 +208,7 @@ event.Listen("product.created", func(e event.Event) error {
 
 #### Token Bucket (令牌桶)
 ```go
-import "github.com/clarkgo/clarkgo/pkg/ratelimit"
+import "github.com/chenyusolar/aidecms/pkg/ratelimit"
 
 // 创建限流器: 每秒100个请求，突发200
 limiter := ratelimit.NewTokenBucket(100, 200)
@@ -248,8 +248,8 @@ if limiter.Allow(userID) {
 #### Hertz 中间件
 ```go
 import (
-    "github.com/clarkgo/clarkgo/pkg/framework"
-    "github.com/clarkgo/clarkgo/pkg/ratelimit"
+    "github.com/chenyusolar/aidecms/pkg/framework"
+    "github.com/chenyusolar/aidecms/pkg/ratelimit"
 )
 
 // 全局限流
@@ -273,7 +273,7 @@ h.Use(framework.RateLimitByUser(
 
 #### 基础用法
 ```go
-import "github.com/clarkgo/clarkgo/pkg/health"
+import "github.com/chenyusolar/aidecms/pkg/health"
 
 // 创建健康检查器
 hc := health.NewHealthChecker(5 * time.Second)
@@ -320,7 +320,7 @@ checker := health.NewDegradableChecker("database", func(ctx context.Context) err
 
 #### Hertz 端点集成
 ```go
-import "github.com/clarkgo/clarkgo/pkg/framework"
+import "github.com/chenyusolar/aidecms/pkg/framework"
 
 // 完整健康检查
 h.GET("/health", framework.HealthEndpoint(hc))
@@ -414,7 +414,7 @@ GET /health?pretty=true     - 格式化输出
 # 数据库
 DB_HOST=localhost
 DB_PORT=3306
-DB_NAME=clarkgo
+DB_NAME=aidecms
 DB_USER=root
 DB_PASSWORD=password
 
@@ -556,9 +556,9 @@ health_check_duration_seconds
 
 - 完整文档: `doc/PHASE5_SUMMARY.md`
 - API 文档: `godoc -http=:6060`
-- 源码: https://github.com/clarkgo/clarkgo
+- 源码: https://github.com/chenyusolar/aidecms
 - 问题反馈: GitHub Issues
 
 ---
 
-**ClarkGo CMS Framework - 快速、可靠、易用** 🚀
+**AideCMS CMS Framework - 快速、可靠、易用** 🚀

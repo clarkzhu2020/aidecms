@@ -1,4 +1,4 @@
-module github.com/clarkgo/clarkgo
+module github.com/chenyusolar/aidecms
 
 go 1.24.6
 

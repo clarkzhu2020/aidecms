@@ -1,6 +1,6 @@
 # Session 功能
 
-ClarkGo 提供了完整的 Session 功能，支持多种存储驱动。
+AideCMS 提供了完整的 Session 功能，支持多种存储驱动。
 
 ## 配置
 
@@ -8,7 +8,7 @@ ClarkGo 提供了完整的 Session 功能，支持多种存储驱动。
 
 ```
 SESSION_DRIVER=memory  # memory, redis, database
-SESSION_NAME=clarkgo_session
+SESSION_NAME=aidecms_session
 SESSION_LIFETIME=1440  # 分钟
 SESSION_SECURE_COOKIE=false
 SESSION_HTTP_ONLY=true

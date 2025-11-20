@@ -3,8 +3,8 @@ package commands
 import (
 	"fmt"
 
-	"github.com/clarkgo/clarkgo/database/migrations"
-	"github.com/clarkgo/clarkgo/pkg/database"
+	"github.com/chenyusolar/aidecms/database/migrations"
+	"github.com/chenyusolar/aidecms/pkg/database"
 	"github.com/spf13/cobra"
 )
 

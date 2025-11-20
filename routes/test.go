@@ -3,7 +3,7 @@ package routes
 import (
 	"context"
 
-	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/chenyusolar/aidecms/pkg/framework"
 )
 
 // TestRoutes 测试路由

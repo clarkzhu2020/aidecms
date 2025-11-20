@@ -1,7 +1,7 @@
 package migrations
 
 import (
-	"github.com/clarkgo/clarkgo/pkg/database"
+	"github.com/chenyusolar/aidecms/pkg/database"
 	"gorm.io/gorm"
 )
 

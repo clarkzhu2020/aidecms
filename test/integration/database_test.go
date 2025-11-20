@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/chenyusolar/aidecms/pkg/framework"
 	"github.com/stretchr/testify/assert"
 )
 

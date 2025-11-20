@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/clarkgo/clarkgo/internal/app/models"
-	"github.com/clarkgo/clarkgo/internal/app/services"
-	"github.com/clarkgo/clarkgo/pkg/database"
-	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/chenyusolar/aidecms/internal/app/models"
+	"github.com/chenyusolar/aidecms/internal/app/services"
+	"github.com/chenyusolar/aidecms/pkg/database"
+	"github.com/chenyusolar/aidecms/pkg/framework"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

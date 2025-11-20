@@ -6,11 +6,11 @@ import (
 	"log"
 	"time"
 
-	"github.com/clarkgo/clarkgo/pkg/web3"
+	"github.com/chenyusolar/aidecms/pkg/web3"
 )
 
 func main() {
-	fmt.Println("=== ClarkGo Web3 Integration Demo ===\n")
+	fmt.Println("=== AideCMS Web3 Integration Demo ===\n")
 
 	// 初始化 Web3 客户端
 	fmt.Println("1. Initializing Web3 clients...")

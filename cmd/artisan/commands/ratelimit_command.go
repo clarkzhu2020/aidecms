@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/clarkgo/clarkgo/pkg/ratelimit"
+	"github.com/chenyusolar/aidecms/pkg/ratelimit"
 )
 
 // RateLimitCommand demonstrates rate limiting functionality

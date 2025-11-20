@@ -1,6 +1,6 @@
 # 邮件服务API文档
 
-ClarkGo 框架现已集成完整的邮件服务API，支持SMTP、TLS/SSL加密、模板渲染、批量发送等功能。
+AideCMS 框架现已集成完整的邮件服务API，支持SMTP、TLS/SSL加密、模板渲染、批量发送等功能。
 
 ## 配置说明
 
@@ -15,7 +15,7 @@ MAIL_USERNAME=your_email@example.com # 邮箱用户名
 MAIL_PASSWORD=your_password          # 邮箱密码
 MAIL_ENCRYPTION=tls                  # 加密方式：tls/ssl/none
 MAIL_FROM_ADDRESS=noreply@example.com # 发件人邮箱
-MAIL_FROM_NAME=ClarkGo               # 发件人姓名
+MAIL_FROM_NAME=AideCMS               # 发件人姓名
 ```
 
 ## API 端点
@@ -39,7 +39,7 @@ curl -X GET http://localhost:8888/api/mail/config
     "port": 1025,
     "encryption": "tls",
     "from_email": "noreply@example.com",
-    "from_name": "ClarkGo",
+    "from_name": "AideCMS",
     "username": "***"
   }
 }
@@ -123,7 +123,7 @@ curl -X POST http://localhost:8888/api/mail/send \
   "template": "<h1>Hello {{.Name}}</h1><p>Welcome to {{.App}}</p>",
   "data": {
     "Name": "张三",
-    "App": "ClarkGo"
+    "App": "AideCMS"
   }
 }
 ```
@@ -134,11 +134,11 @@ curl -X POST http://localhost:8888/api/mail/send-template \
   -H "Content-Type: application/json" \
   -d '{
     "to": ["user@example.com"],
-    "subject": "欢迎使用ClarkGo",
+    "subject": "欢迎使用AideCMS",
     "template": "<h1>Hello {{.Name}}</h1><p>Welcome to {{.App}}</p>",
     "data": {
       "Name": "用户",
-      "App": "ClarkGo框架"
+      "App": "AideCMS框架"
     }
   }'
 ```

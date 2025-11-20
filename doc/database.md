@@ -1,6 +1,6 @@
 # 数据库
 
-ClarkGo 使用 GORM 作为 ORM，支持 MySQL、PostgreSQL、SQLite 等数据库。
+AideCMS 使用 GORM 作为 ORM，支持 MySQL、PostgreSQL、SQLite 等数据库。
 
 ## 配置
 
@@ -10,7 +10,7 @@ ClarkGo 使用 GORM 作为 ORM，支持 MySQL、PostgreSQL、SQLite 等数据库
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=clarkgo
+DB_DATABASE=aidecms
 DB_USERNAME=root
 DB_PASSWORD=
 ```

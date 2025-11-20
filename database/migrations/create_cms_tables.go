@@ -1,8 +1,8 @@
 package migrations
 
 import (
-	"github.com/clarkgo/clarkgo/internal/app/models"
-	"github.com/clarkgo/clarkgo/pkg/database"
+	"github.com/chenyusolar/aidecms/internal/app/models"
+	"github.com/chenyusolar/aidecms/pkg/database"
 )
 
 // CreateCMSTables 创建CMS相关表

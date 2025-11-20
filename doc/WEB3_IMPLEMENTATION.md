@@ -2,7 +2,7 @@
 
 ## 概述
 
-为 ClarkGo 框架成功添加了完整的 Web3 区块链集成功能，支持 Bitcoin、Ethereum、BSC 和 Solana 四大主流区块链网络。
+为 AideCMS 框架成功添加了完整的 Web3 区块链集成功能，支持 Bitcoin、Ethereum、BSC 和 Solana 四大主流区块链网络。
 
 ## 实现时间
 
@@ -397,12 +397,12 @@ func (c *CustomChecker) Check(ctx context.Context) error {
 ## 贡献者
 
 - **开发**: Clark Go Team
-- **架构设计**: ClarkGo Framework
+- **架构设计**: AideCMS Framework
 - **测试**: 自动化测试套件
 
 ## 许可证
 
-MIT License - 与 ClarkGo 框架保持一致
+MIT License - 与 AideCMS 框架保持一致
 
 ## 更新日志
 

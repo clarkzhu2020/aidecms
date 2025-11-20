@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/clarkgo/clarkgo/config"
-	"github.com/clarkgo/clarkgo/internal/app/models"
+	"github.com/chenyusolar/aidecms/config"
+	"github.com/chenyusolar/aidecms/internal/app/models"
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"

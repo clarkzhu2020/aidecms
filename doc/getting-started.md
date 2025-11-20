@@ -1,6 +1,6 @@
-# ClarkGo 开发框架
+# AideCMS 开发框架
 
-ClarkGo 是一个基于 CloudWeGo Hertz 的高性能 Go Web 开发框架，提供了优雅的语法和丰富的功能。
+AideCMS 是一个基于 CloudWeGo Hertz 的高性能 Go Web 开发框架，提供了优雅的语法和丰富的功能。
 
 ## 目录结构
 
@@ -44,7 +44,7 @@ cp .env.example .env
 主要配置项:
 
 ```
-APP_NAME=ClarkGo
+APP_NAME=AideCMS
 APP_ENV=local
 APP_DEBUG=true
 APP_URL=http://localhost:8888
@@ -52,7 +52,7 @@ APP_URL=http://localhost:8888
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=clarkgo
+DB_DATABASE=aidecms
 DB_USERNAME=root
 DB_PASSWORD=
 

@@ -573,15 +573,15 @@ definitions:
 host: localhost:8888
 info:
   contact:
-    email: support@clarkgo.com
+    email: support@aidecms.com
     name: API Support
     url: http://www.swagger.io/support
-  description: ClarkGo CMS API文档 - 基于Hertz框架的高性能内容管理系统
+  description: AideCMS API文档 - 基于Hertz框架的高性能内容管理系统
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
   termsOfService: http://swagger.io/terms/
-  title: ClarkGo CMS API
+  title: AideCMS API
   version: "1.0"
 paths:
   /categories:

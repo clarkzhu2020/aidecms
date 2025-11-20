@@ -1,6 +1,6 @@
 # 邮件系统
 
-ClarkGo 集成了强大的邮件发送功能，支持模板和队列。
+AideCMS 集成了强大的邮件发送功能，支持模板和队列。
 
 ## 配置
 
@@ -14,7 +14,7 @@ MAIL_USERNAME=user@example.com
 MAIL_PASSWORD=secret
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=no-reply@example.com
-MAIL_FROM_NAME="ClarkGo"
+MAIL_FROM_NAME="AideCMS"
 ```
 
 ## 基本使用

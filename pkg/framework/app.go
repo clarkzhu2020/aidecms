@@ -10,16 +10,16 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/clarkgo/clarkgo/pkg/config"
-	"github.com/clarkgo/clarkgo/pkg/database"
-	"github.com/clarkgo/clarkgo/pkg/log"
-	"github.com/clarkgo/clarkgo/pkg/redis"
+	"github.com/chenyusolar/aidecms/pkg/config"
+	"github.com/chenyusolar/aidecms/pkg/database"
+	"github.com/chenyusolar/aidecms/pkg/log"
+	"github.com/chenyusolar/aidecms/pkg/redis"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 )
 
-// Application 是ClarkGo框架的核心结构
+// Application 是AideCMS框架的核心结构
 type Application struct {
 	Server     *server.Hertz
 	Router     *Router
@@ -38,7 +38,7 @@ type Application struct {
 // NewApplication 创建一个新的应用实例
 func NewApplication() *Application {
 	app := &Application{
-		AppName:    "ClarkGo",
+		AppName:    "AideCMS",
 		AppVersion: "1.0.0",
 		Env:        "development",
 		Debug:      true,

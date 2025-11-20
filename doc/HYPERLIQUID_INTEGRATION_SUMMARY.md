@@ -2,7 +2,7 @@
 
 ## 概述
 
-成功为 ClarkGo 框架添加了 Hyperliquid 去中心化交易所（DEX）支持，这是框架首个 DEX 集成，与现有的 Coinbase 和 KuCoin 中心化交易所（CEX）形成互补。
+成功为 AideCMS 框架添加了 Hyperliquid 去中心化交易所（DEX）支持，这是框架首个 DEX 集成，与现有的 Coinbase 和 KuCoin 中心化交易所（CEX）形成互补。
 
 ## 完成时间
 
@@ -422,7 +422,7 @@ for _, pos := range positions {
 ### 编译测试
 
 ```bash
-$ go build -o bin/clarkgo ./main.go
+$ go build -o bin/aidecms ./main.go
 # ✅ 编译成功，无错误
 ```
 
@@ -614,7 +614,7 @@ GetBlockNumber()             GetPositions()
 
 ## 总结
 
-成功为 ClarkGo 框架添加了首个去中心化交易所（DEX）支持，实现了：
+成功为 AideCMS 框架添加了首个去中心化交易所（DEX）支持，实现了：
 
 ✅ **完整的 Hyperliquid 客户端**（661行代码）  
 ✅ **10个核心 API 功能**（查询+交易）  

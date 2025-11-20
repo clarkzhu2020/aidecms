@@ -3,7 +3,7 @@ package adapters
 import (
 	"context"
 
-	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/chenyusolar/aidecms/pkg/framework"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

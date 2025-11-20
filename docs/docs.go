@@ -13,7 +13,7 @@ const docTemplate = `{
         "contact": {
             "name": "API Support",
             "url": "http://www.swagger.io/support",
-            "email": "support@clarkgo.com"
+            "email": "support@aidecms.com"
         },
         "license": {
             "name": "MIT",
@@ -2310,8 +2310,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:8888",
 	BasePath:         "/api",
 	Schemes:          []string{},
-	Title:            "ClarkGo CMS API",
-	Description:      "ClarkGo CMS API文档 - 基于Hertz框架的高性能内容管理系统",
+	Title:            "AideCMS API",
+	Description:      "AideCMS API文档 - 基于Hertz框架的高性能内容管理系统",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

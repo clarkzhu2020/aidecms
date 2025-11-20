@@ -1,4 +1,4 @@
-# ClarkGo CMS Phase 2 实现总结
+# AideCMS CMS Phase 2 实现总结
 
 ## 📅 更新时间
 2025-11-19
@@ -195,7 +195,7 @@ github.com/go-openapi/swag v0.25.3
 ### 测试 Swagger UI
 ```bash
 # 启动服务
-./clarkgo
+./aidecms
 
 # 浏览器访问
 http://localhost:8888/swagger/index.html

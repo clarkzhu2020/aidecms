@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/clarkgo/clarkgo/database/migrations"
+	"github.com/chenyusolar/aidecms/database/migrations"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 func main() {
 	// 直接创建数据库连接
-	dsn := "root:@tcp(localhost:3306)/clarkgo?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:@tcp(localhost:3306)/aidecms?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)

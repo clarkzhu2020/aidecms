@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/clarkgo/clarkgo/pkg/mail"
+	"github.com/chenyusolar/aidecms/pkg/mail"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

@@ -1,6 +1,6 @@
 # 部署指南
 
-ClarkGo 支持多种部署方式，包括传统服务器部署和容器化部署。
+AideCMS 支持多种部署方式，包括传统服务器部署和容器化部署。
 
 ## 环境要求
 
@@ -23,35 +23,35 @@ APP_DEBUG=false
 
 3. 构建应用:
 ```bash
-go build -o clarkgo cmd/clarkgo/main.go
+go build -o aidecms cmd/aidecms/main.go
 ```
 
 ## 传统部署
 
 ### 使用 Supervisor
 
-`/etc/supervisor/conf.d/clarkgo.conf`:
+`/etc/supervisor/conf.d/aidecms.conf`:
 ```ini
-[program:clarkgo]
-command=/path/to/clarkgo
-directory=/path/to/clarkgo
+[program:aidecms]
+command=/path/to/aidecms
+directory=/path/to/aidecms
 user=www-data
 autostart=true
 autorestart=true
-stderr_logfile=/var/log/clarkgo.err.log
-stdout_logfile=/var/log/clarkgo.out.log
+stderr_logfile=/var/log/aidecms.err.log
+stdout_logfile=/var/log/aidecms.out.log
 ```
 
 启动服务:
 ```bash
 sudo supervisorctl reread
 sudo supervisorctl update
-sudo supervisorctl start clarkgo
+sudo supervisorctl start aidecms
 ```
 
 ### Nginx 配置
 
-`/etc/nginx/sites-available/clarkgo`:
+`/etc/nginx/sites-available/aidecms`:
 ```nginx
 server {
     listen 80;
@@ -74,7 +74,7 @@ FROM golang:1.18-alpine AS builder
 
 WORKDIR /app
 COPY . .
-RUN go build -o clarkgo cmd/clarkgo/main.go
+RUN go build -o aidecms cmd/aidecms/main.go
 
 FROM alpine:latest
 WORKDIR /app
@@ -82,7 +82,7 @@ COPY --from=builder /app/clarkgo .
 COPY --from=builder /app/.env.production .env
 
 EXPOSE 8888
-CMD ["./clarkgo"]
+CMD ["./aidecms"]
 ```
 
 ### docker-compose.yml
@@ -123,13 +123,13 @@ volumes:
 ### 数据库迁移
 
 ```bash
-docker-compose exec app ./clarkgo migrate
+docker-compose exec app ./aidecms migrate
 ```
 
 ### 队列处理
 
 ```bash
-docker-compose exec app ./clarkgo queue:work
+docker-compose exec app ./aidecms queue:work
 ```
 
 ## 性能优化

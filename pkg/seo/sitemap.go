@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/clarkgo/clarkgo/internal/app/models"
+	"github.com/chenyusolar/aidecms/internal/app/models"
 	"gorm.io/gorm"
 )
 

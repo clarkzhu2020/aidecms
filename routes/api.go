@@ -3,11 +3,11 @@ package routes
 import (
 	"fmt"
 
-	controllers "github.com/clarkgo/clarkgo/app/Http/Controllers"
-	middleware "github.com/clarkgo/clarkgo/app/Http/Middleware"
-	"github.com/clarkgo/clarkgo/config"
-	"github.com/clarkgo/clarkgo/internal/app/adapters"
-	"github.com/clarkgo/clarkgo/pkg/framework"
+	controllers "github.com/chenyusolar/aidecms/app/Http/Controllers"
+	middleware "github.com/chenyusolar/aidecms/app/Http/Middleware"
+	"github.com/chenyusolar/aidecms/config"
+	"github.com/chenyusolar/aidecms/internal/app/adapters"
+	"github.com/chenyusolar/aidecms/pkg/framework"
 )
 
 func APIRoutes(app *framework.Application) {

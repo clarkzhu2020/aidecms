@@ -3,20 +3,20 @@ package main
 import (
 	"context"
 
-	_ "github.com/clarkgo/clarkgo/docs" // Swagger docs
-	"github.com/clarkgo/clarkgo/pkg/framework"
-	"github.com/clarkgo/clarkgo/pkg/swagger"
-	"github.com/clarkgo/clarkgo/routes"
+	_ "github.com/chenyusolar/aidecms/docs" // Swagger docs
+	"github.com/chenyusolar/aidecms/pkg/framework"
+	"github.com/chenyusolar/aidecms/pkg/swagger"
+	"github.com/chenyusolar/aidecms/routes"
 )
 
-// @title           ClarkGo CMS API
+// @title           AideCMS API
 // @version         1.0
-// @description     ClarkGo CMS API文档 - 基于Hertz框架的高性能内容管理系统
+// @description     AideCMS API文档 - 基于Hertz框架的高性能AI辅助内容管理系统
 // @termsOfService  http://swagger.io/terms/
 
 // @contact.name   API Support
 // @contact.url    http://www.swagger.io/support
-// @contact.email  support@clarkgo.com
+// @contact.email  support@aidecms.com
 
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
@@ -57,7 +57,7 @@ func main() {
 
 		// Web路由
 		router.GET("/", func(ctx context.Context, c *framework.RequestContext) {
-			c.String(200, "Welcome to ClarkGo with AI capabilities! See /doc/ai.md for AI integration guide.")
+			c.String(200, "Welcome to AideCMS with AI capabilities! See /doc/ai.md for AI integration guide.")
 		})
 	})
 

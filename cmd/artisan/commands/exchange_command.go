@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/clarkgo/clarkgo/pkg/web3"
+	"github.com/chenyusolar/aidecms/pkg/web3"
 	"github.com/spf13/cobra"
 )
 

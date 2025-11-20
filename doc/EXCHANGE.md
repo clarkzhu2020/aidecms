@@ -1,6 +1,6 @@
 # 加密货币交易所集成
 
-ClarkGo 提供了与主流加密货币交易所的集成功能，支持查询账户余额、交易对价格等操作。
+AideCMS 提供了与主流加密货币交易所的集成功能，支持查询账户余额、交易对价格等操作。
 
 ## 目录
 
@@ -59,7 +59,7 @@ EXCHANGE_KUCOIN_PASSPHRASE=your_kucoin_passphrase
 ### 2. 初始化客户端
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/web3"
+import "github.com/chenyusolar/aidecms/pkg/web3"
 
 // 自动从环境变量加载配置
 config := web3.LoadConfig()
@@ -349,7 +349,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/clarkgo/clarkgo/pkg/web3"
+    "github.com/chenyusolar/aidecms/pkg/web3"
 )
 
 func main() {
@@ -645,7 +645,7 @@ if cfg.BinanceAPIKey != "" {
 
 - [Coinbase Pro API 文档](https://docs.cloud.coinbase.com/exchange/reference/)
 - [KuCoin API 文档](https://docs.kucoin.com/)
-- [ClarkGo 框架文档](./getting-started.md)
+- [AideCMS 框架文档](./getting-started.md)
 - [Web3 集成文档](./web3.md)
 
 ## 更新日志

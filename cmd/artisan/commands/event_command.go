@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/clarkgo/clarkgo/pkg/event"
+	"github.com/chenyusolar/aidecms/pkg/event"
 )
 
 // EventTest 测试事件系统

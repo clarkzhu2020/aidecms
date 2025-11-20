@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/clarkgo/clarkgo/config"
+	"github.com/chenyusolar/aidecms/config"
 )
 
 // MailService 邮件服务

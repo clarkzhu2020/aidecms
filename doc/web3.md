@@ -1,6 +1,6 @@
 # Web3 区块链集成
 
-ClarkGo 提供完整的 Web3 区块链集成功能，支持 Bitcoin、Ethereum、BSC（Binance Smart Chain）和 Solana 等主流区块链网络。
+AideCMS 提供完整的 Web3 区块链集成功能，支持 Bitcoin、Ethereum、BSC（Binance Smart Chain）和 Solana 等主流区块链网络。
 
 ## 功能特性
 
@@ -50,7 +50,7 @@ WEB3_SOLANA_RPC=https://api.mainnet-beta.solana.com
 package main
 
 import (
-    "github.com/clarkgo/clarkgo/pkg/web3"
+    "github.com/chenyusolar/aidecms/pkg/web3"
 )
 
 func main() {
@@ -80,7 +80,7 @@ import (
     "fmt"
     "time"
     
-    "github.com/clarkgo/clarkgo/pkg/web3"
+    "github.com/chenyusolar/aidecms/pkg/web3"
 )
 
 func main() {
@@ -371,8 +371,8 @@ func main() {
 package routes
 
 import (
-    "github.com/clarkgo/clarkgo/app/Http/Controllers"
-    "github.com/clarkgo/clarkgo/pkg/framework"
+    "github.com/chenyusolar/aidecms/app/Http/Controllers"
+    "github.com/chenyusolar/aidecms/pkg/framework"
 )
 
 func RegisterWeb3Routes(router *framework.RouteGroup) {
@@ -564,7 +564,7 @@ defer manager.Close()
 对于不变的数据（如已确认交易），可以缓存结果：
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/cache"
+import "github.com/chenyusolar/aidecms/pkg/cache"
 
 func GetTransactionCached(ctx context.Context, chain web3.Chain, txHash string) (*web3.Transaction, error) {
     cacheKey := fmt.Sprintf("web3:tx:%s:%s", chain, txHash)

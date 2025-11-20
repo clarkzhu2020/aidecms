@@ -1,10 +1,10 @@
-# ClarkGo - 企业级 Go CMS 平台框架
+# AideCMS - 企业级 Go CMS 平台框架
 
 [![Go Version](https://img.shields.io/badge/Go-1.18+-00ADD8?style=flat&logo=go)](https://golang.org)
 [![Hertz](https://img.shields.io/badge/Hertz-CloudWeGo-blue)](https://github.com/cloudwego/hertz)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-ClarkGo 是一个基于 CloudWeGo Hertz 框架开发的企业级 CMS 平台框架，提供完整的任务调度、队列系统、事件驱动、限流保护和健康监控等核心功能。
+AideCMS 是一个基于 CloudWeGo Hertz 框架开发的企业级 CMS 平台框架，提供完整的任务调度、队列系统、事件驱动、限流保护和健康监控等核心功能。
 
 ## ✨ 核心特性
 
@@ -103,7 +103,7 @@ ClarkGo 是一个基于 CloudWeGo Hertz 框架开发的企业级 CMS 平台框�
 
 ```bash
 # 克隆项目
-git clone https://github.com/chenyusolar/clarkgo.git
+git clone https://github.com/chenyusolar/aidecms.git
 cd clarkgo
 
 # 安装依赖
@@ -130,7 +130,7 @@ go run main.go
 package main
 
 import (
-    "github.com/clarkgo/clarkgo/pkg/framework"
+    "github.com/chenyusolar/aidecms/pkg/framework"
 )
 
 func main() {
@@ -140,7 +140,7 @@ func main() {
     app.RegisterRoutes(func(router *framework.Router) {
         router.GET("/", func(ctx context.Context, c *framework.RequestContext) {
             c.JSON(200, map[string]interface{}{
-                "message": "Welcome to ClarkGo!",
+                "message": "Welcome to AideCMS!",
             })
         })
     })
@@ -153,7 +153,7 @@ func main() {
 ### 2. 任务调度
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/schedule"
+import "github.com/chenyusolar/aidecms/pkg/schedule"
 
 // 每分钟执行
 schedule.EveryMinute().Do(func() {
@@ -179,7 +179,7 @@ go run cmd/artisan/main.go artisan schedule:work
 ### 3. 队列系统
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/queue"
+import "github.com/chenyusolar/aidecms/pkg/queue"
 
 // 定义任务
 type EmailJob struct {
@@ -209,7 +209,7 @@ go run cmd/artisan/main.go artisan queue:worker default 5
 ### 4. 事件系统
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/event"
+import "github.com/chenyusolar/aidecms/pkg/event"
 
 // 注册监听器
 event.Listen("user.registered", func(e event.Event) error {
@@ -234,8 +234,8 @@ event.Dispatch(event.NewUserRegistered(userID, email, name))
 
 ```go
 import (
-    "github.com/clarkgo/clarkgo/pkg/ratelimit"
-    "github.com/clarkgo/clarkgo/pkg/framework"
+    "github.com/chenyusolar/aidecms/pkg/ratelimit"
+    "github.com/chenyusolar/aidecms/pkg/framework"
 )
 
 // 创建限流器
@@ -258,7 +258,7 @@ h.Use(framework.RateLimitByUser(
 ### 6. 健康检查
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/health"
+import "github.com/chenyusolar/aidecms/pkg/health"
 
 // 创建健康检查器
 hc := health.NewHealthChecker(5 * time.Second)
@@ -278,7 +278,7 @@ h.GET("/health/live", framework.LivenessEndpoint())
 
 ```go
 import (
-    "github.com/clarkgo/clarkgo/pkg/web3"
+    "github.com/chenyusolar/aidecms/pkg/web3"
     "context"
     "time"
 )
@@ -322,7 +322,7 @@ for chain, balance := range balances {
 
 ```go
 import (
-    "github.com/clarkgo/clarkgo/pkg/web3"
+    "github.com/chenyusolar/aidecms/pkg/web3"
     "context"
 )
 
@@ -477,7 +477,7 @@ clarkgo/
 
 ## 🛠️ Artisan CLI 命令
 
-ClarkGo 提供了强大的 Artisan 命令行工具，用于开发和管理。
+AideCMS 提供了强大的 Artisan 命令行工具，用于开发和管理。
 
 ### 任务调度命令
 ```bash
@@ -674,7 +674,7 @@ MAIL_PORT=587
 MAIL_USERNAME=user@example.com
 MAIL_PASSWORD=secret
 MAIL_FROM_ADDRESS=noreply@example.com
-MAIL_FROM_NAME=ClarkGo
+MAIL_FROM_NAME=AideCMS
 
 # AI 配置（可选）
 AI_PROVIDER=openai
@@ -685,7 +685,7 @@ AI_MODEL=gpt-3.5-turbo
 ### 配置读取
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/config"
+import "github.com/chenyusolar/aidecms/pkg/config"
 
 // 获取字符串配置
 host := config.GetEnv("DB_HOST", "localhost")
@@ -732,7 +732,7 @@ schedule.RunTask("backup")
 
 ```go
 // 配置 Redis 驱动（生产环境推荐）
-import "github.com/clarkgo/clarkgo/pkg/queue"
+import "github.com/chenyusolar/aidecms/pkg/queue"
 
 redisQueue := queue.NewRedisDriver(redisClient, "myapp")
 queue.UseDriver("default", redisQueue)
@@ -847,8 +847,8 @@ fmt.Printf("Used: %d/%d\n", stats["requests"], stats["limit"])
 
 ```go
 import (
-    "github.com/clarkgo/clarkgo/pkg/framework"
-    "github.com/clarkgo/clarkgo/pkg/ratelimit"
+    "github.com/chenyusolar/aidecms/pkg/framework"
+    "github.com/chenyusolar/aidecms/pkg/ratelimit"
 )
 
 // 全局限流
@@ -874,7 +874,7 @@ h.Use(framework.RateLimitWithStats(limiter, "api"))
 全面的服务健康监控：
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/health"
+import "github.com/chenyusolar/aidecms/pkg/health"
 
 // 创建健康检查器
 hc := health.NewHealthChecker(5 * time.Second)
@@ -914,7 +914,7 @@ hc.ClearCache()
 #### HTTP 端点集成
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/framework"
+import "github.com/chenyusolar/aidecms/pkg/framework"
 
 // 完整健康检查
 h.GET("/health", framework.HealthEndpoint(hc))
@@ -979,7 +979,7 @@ spec:
 支持 Bitcoin、Ethereum、BSC、Solana 等多条公链：
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/web3"
+import "github.com/chenyusolar/aidecms/pkg/web3"
 
 // 初始化所有区块链客户端
 if err := web3.InitializeClients(); err != nil {
@@ -1130,7 +1130,7 @@ artisan web3 chains
 #### 基本使用
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/web3"
+import "github.com/chenyusolar/aidecms/pkg/web3"
 
 // 初始化交易所客户端
 if err := web3.InitializeClients(); err != nil {
@@ -1351,7 +1351,7 @@ artisan exchange balance-all BTC
 
 ```go
 // 用户认证
-import "github.com/clarkgo/clarkgo/app/Http/Middleware"
+import "github.com/chenyusolar/aidecms/app/Http/Middleware"
 
 h.Use(Middleware.JWTMiddleware())
 
@@ -1687,7 +1687,7 @@ var (
 godoc -http=:6060
 
 # 访问文档
-open http://localhost:6060/pkg/github.com/clarkgo/clarkgo/
+open http://localhost:6060/pkg/github.com/chenyusolar/aidecms/
 ```
 
 ### Swagger 文档
@@ -1718,7 +1718,7 @@ open http://localhost:8888/swagger/index.html
 
 ### 报告问题
 
-如果发现 Bug 或有功能建议，请[创建 Issue](https://github.com/chenyusolar/clarkgo/issues)。
+如果发现 Bug 或有功能建议，请[创建 Issue](https://github.com/chenyusolar/aidecms/issues)。
 
 ## 📝 更新日志
 
@@ -1766,10 +1766,10 @@ open http://localhost:8888/swagger/index.html
 
 - 作者：Clark Zhu
 - GitHub: [@chenyusolar](https://github.com/chenyusolar)
-- 项目地址: [https://github.com/chenyusolar/clarkgo](https://github.com/chenyusolar/clarkgo)
+- 项目地址: [https://github.com/chenyusolar/aidecms](https://github.com/chenyusolar/aidecms)
 
 ---
 
-**ClarkGo - 让 Go Web 开发更简单、更高效！** 🚀
+**AideCMS - 让 Go Web 开发更简单、更高效！** 🚀
 
-Made with ❤️ by ClarkGo Team
+Made with ❤️ by AideCMS Team

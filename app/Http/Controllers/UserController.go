@@ -3,8 +3,8 @@ package controllers
 import (
 	"context"
 
-	"github.com/clarkgo/clarkgo/internal/app/services"
-	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/chenyusolar/aidecms/internal/app/services"
+	"github.com/chenyusolar/aidecms/pkg/framework"
 	"golang.org/x/crypto/bcrypt"
 )
 

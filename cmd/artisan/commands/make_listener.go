@@ -24,7 +24,7 @@ func MakeListener(args []string) {
 
 	tmpl := `package listeners
 
-import "github.com/clarkgo/clarkgo/app/Events"
+import "github.com/chenyusolar/aidecms/app/Events"
 
 type {{.Name}} struct {}
 

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/clarkgo/clarkgo/pkg/ai"
+	"github.com/chenyusolar/aidecms/pkg/ai"
 )
 
 // AICommand AI相关命令

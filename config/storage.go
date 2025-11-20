@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/clarkgo/clarkgo/pkg/upload"
+	"github.com/chenyusolar/aidecms/pkg/upload"
 )
 
 // StorageDriver 存储驱动类型

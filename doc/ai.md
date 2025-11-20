@@ -1,6 +1,6 @@
-# ClarkGo AI 集成指南
+# AideCMS AI 集成指南
 
-ClarkGo 集成了 CloudWeGo Eino 框架，提供强大的 AI 大模型交互能力。支持多种主流大模型提供商，包括 OpenAI、Anthropic、豆包、通义千问等。
+AideCMS 集成了 CloudWeGo Eino 框架，提供强大的 AI 大模型交互能力。支持多种主流大模型提供商，包括 OpenAI、Anthropic、豆包、通义千问等。
 
 ## 特性
 
@@ -61,10 +61,10 @@ go run cmd/artisan/main.go ai:completion "Once upon a time" openai 0.8 500
 package main
 
 import (
-    "github.com/clarkgo/clarkgo/pkg/framework"
-    "github.com/clarkgo/clarkgo/pkg/framework/middleware"
-    "github.com/clarkgo/clarkgo/config"
-    "github.com/clarkgo/clarkgo/app/Http/Controllers"
+    "github.com/chenyusolar/aidecms/pkg/framework"
+    "github.com/chenyusolar/aidecms/pkg/framework/middleware"
+    "github.com/chenyusolar/aidecms/config"
+    "github.com/chenyusolar/aidecms/app/Http/Controllers"
 )
 
 func main() {
@@ -217,7 +217,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/clarkgo/clarkgo/pkg/ai"
+    "github.com/chenyusolar/aidecms/pkg/ai"
 )
 
 func example() {
@@ -445,6 +445,6 @@ for {
 ## 更多信息
 
 - [CloudWeGo Eino 官方文档](https://github.com/cloudwego/eino)
-- [ClarkGo 项目主页](https://github.com/clarkgo/clarkgo)
+- [AideCMS 项目主页](https://github.com/chenyusolar/aidecms)
 - [API 参考文档](./api.md)
 - [部署指南](./deployment.md)

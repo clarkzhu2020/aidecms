@@ -1,16 +1,16 @@
-# ClarkGo CMS 快速开始指南
+# AideCMS CMS 快速开始指南
 
 ## 📦 1. 安装和初始化
 
 ### 安装依赖
 ```bash
-cd /path/to/clarkgo
+cd /path/to/aidecms
 go mod tidy
 ```
 
 ### 编译项目
 ```bash
-go build -o clarkgo main.go
+go build -o aidecms main.go
 ```
 
 ### 初始化CMS数据库
@@ -43,7 +43,7 @@ Default roles created:
 ## 🚀 2. 启动服务
 
 ```bash
-./clarkgo
+./aidecms
 ```
 
 服务将在 `http://localhost:8888` 启动
@@ -180,16 +180,16 @@ curl -X POST http://localhost:8888/api/cms/posts \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "title": "ClarkGo框架入门指南",
-    "content": "# ClarkGo是什么\n\nClarkGo是一个基于Hertz的高性能Go Web框架...",
-    "excerpt": "快速了解ClarkGo框架的核心特性",
+    "title": "AideCMS框架入门指南",
+    "content": "# AideCMS是什么\n\nAideCMS是一个基于Hertz的高性能Go Web框架...",
+    "excerpt": "快速了解AideCMS框架的核心特性",
     "featured_image": "/uploads/2024/01/02/image.jpg",
     "status": "published",
     "category_id": 1,
     "tags": [1, 2],
-    "meta_title": "ClarkGo框架入门指南 - 完整教程",
-    "meta_description": "本文详细介绍ClarkGo框架的使用方法",
-    "meta_keywords": "ClarkGo, Go, Web框架, 教程"
+    "meta_title": "AideCMS框架入门指南 - 完整教程",
+    "meta_description": "本文详细介绍AideCMS框架的使用方法",
+    "meta_keywords": "AideCMS, Go, Web框架, 教程"
   }'
 ```
 
@@ -232,7 +232,7 @@ curl -X PUT http://localhost:8888/api/cms/posts/1 \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "title": "ClarkGo框架完整指南（更新版）",
+    "title": "AideCMS框架完整指南（更新版）",
     "content": "更新后的内容..."
   }'
 ```
@@ -386,6 +386,6 @@ SQLITE_DATABASE=database/data.db
 
 ## 🎉 恭喜！
 
-你已经成功设置并使用了ClarkGo CMS系统！现在可以开始构建你的内容管理应用了。
+你已经成功设置并使用了AideCMS CMS系统！现在可以开始构建你的内容管理应用了。
 
 如有问题，请查阅文档或提交Issue。

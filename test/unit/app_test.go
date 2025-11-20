@@ -3,14 +3,14 @@ package unit_test
 import (
 	"testing"
 
-	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/chenyusolar/aidecms/pkg/framework"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestApplicationCreation(t *testing.T) {
 	app := framework.NewApplication()
 	assert.NotNil(t, app)
-	assert.Equal(t, "ClarkGo", app.AppName)
+	assert.Equal(t, "AideCMS", app.AppName)
 	assert.Equal(t, "1.0.0", app.AppVersion)
 	assert.Equal(t, "development", app.Env)
 	assert.True(t, app.Debug)

@@ -1,6 +1,6 @@
 # 任务调度系统
 
-ClarkGo 提供了强大的任务调度系统，支持 Cron 表达式和预定义调度。
+AideCMS 提供了强大的任务调度系统，支持 Cron 表达式和预定义调度。
 
 ## 功能特性
 
@@ -17,7 +17,7 @@ ClarkGo 提供了强大的任务调度系统，支持 Cron 表达式和预定义
 ### 1. 创建调度器
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/schedule"
+import "github.com/chenyusolar/aidecms/pkg/schedule"
 
 scheduler := schedule.NewScheduler()
 scheduler.Start()

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/clarkgo/clarkgo/database/migrations"
-	"github.com/clarkgo/clarkgo/pkg/framework"
+	"github.com/chenyusolar/aidecms/database/migrations"
+	"github.com/chenyusolar/aidecms/pkg/framework"
 )
 
 func main() {

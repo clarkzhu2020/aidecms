@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/clarkgo/clarkgo/config"
-	"github.com/clarkgo/clarkgo/database/migrations"
+	"github.com/chenyusolar/aidecms/config"
+	"github.com/chenyusolar/aidecms/database/migrations"
 )
 
 func Migrate(args []string) {

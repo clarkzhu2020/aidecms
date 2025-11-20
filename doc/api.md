@@ -1,6 +1,6 @@
 # API 开发
 
-ClarkGo 基于 Hertz 框架提供了强大的 API 开发支持。
+AideCMS 基于 Hertz 框架提供了强大的 API 开发支持。
 
 ## 路由定义
 

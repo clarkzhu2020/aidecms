@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/clarkgo/clarkgo/cmd/artisan/commands"
-	"github.com/clarkgo/clarkgo/cmd/artisan/commands/generator"
-	"github.com/clarkgo/clarkgo/cmd/artisan/stats"
-	"github.com/clarkgo/clarkgo/config"
+	"github.com/chenyusolar/aidecms/cmd/artisan/commands"
+	"github.com/chenyusolar/aidecms/cmd/artisan/commands/generator"
+	"github.com/chenyusolar/aidecms/cmd/artisan/stats"
+	"github.com/chenyusolar/aidecms/config"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 )
@@ -174,7 +174,7 @@ func runWebServer() {
 
 	// Register routes
 	h.GET("/", func(ctx context.Context, c *app.RequestContext) {
-		c.String(200, "Welcome to ClarkGo")
+		c.String(200, "Welcome to AideCMS")
 	})
 
 	// Start server
@@ -182,7 +182,7 @@ func runWebServer() {
 }
 
 func showHelp() {
-	fmt.Println("ClarkGo Artisan Tool")
+	fmt.Println("AideCMS Artisan Tool")
 	fmt.Println("Usage: go run . artisan <command> [arguments]")
 	fmt.Println("\nAvailable commands:")
 	fmt.Println("  make:command <name>\tCreate a new Artisan command")

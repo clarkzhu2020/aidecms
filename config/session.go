@@ -21,7 +21,7 @@ type Session struct {
 
 var SessionConfig = &Session{
 	Driver:          "memory",
-	CookieName:      "clarkgo_session",
+	CookieName:      "aidecms_session",
 	CookieDomain:    "",
 	SecureCookie:    false,
 	HTTPOnlyCookie:  true,

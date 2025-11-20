@@ -1,4 +1,4 @@
-# ClarkGo README 目录
+# AideCMS README 目录
 
 本文档是完整版 README.md 的导航目录。
 
@@ -122,7 +122,7 @@
 - [主 README](README.md) - 完整文档
 - [Phase 5 总结](doc/PHASE5_SUMMARY.md) - 详细实现文档
 - [快速参考](doc/QUICKREF.md) - 代码速查手册
-- [GitHub 仓库](https://github.com/chenyusolar/clarkgo)
+- [GitHub 仓库](https://github.com/chenyusolar/aidecms)
 
 ---
 

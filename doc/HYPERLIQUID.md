@@ -2,7 +2,7 @@
 
 ## 概述
 
-Hyperliquid 是一个高性能的去中心化永续合约交易所（DEX），提供链上订单簿、低延迟交易和高资本效率。ClarkGo 框架集成了 Hyperliquid API，支持查询余额、持仓、价格以及交易功能。
+Hyperliquid 是一个高性能的去中心化永续合约交易所（DEX），提供链上订单簿、低延迟交易和高资本效率。AideCMS 框架集成了 Hyperliquid API，支持查询余额、持仓、价格以及交易功能。
 
 ## 特性
 
@@ -52,7 +52,7 @@ Hyperliquid 使用以太坊钱包进行认证：
 ### 初始化客户端
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/web3"
+import "github.com/chenyusolar/aidecms/pkg/web3"
 
 // 方法1：使用环境变量自动初始化
 config := web3.LoadConfig()

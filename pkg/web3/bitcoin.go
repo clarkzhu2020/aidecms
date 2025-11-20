@@ -54,7 +54,7 @@ func NewBitcoinClient(rpcURL, apiKey string) *BitcoinClient {
 func (c *BitcoinClient) call(ctx context.Context, method string, params []interface{}) (json.RawMessage, error) {
 	req := BitcoinRPCRequest{
 		JSONRPC: "2.0",
-		ID:      "clarkgo",
+		ID:      "aidecms",
 		Method:  method,
 		Params:  params,
 	}

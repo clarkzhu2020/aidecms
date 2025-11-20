@@ -1,7 +1,7 @@
-# ClarkGo Phase 5 Implementation Summary
+# AideCMS Phase 5 Implementation Summary
 
 ## 概述
-完成了 ClarkGo CMS 平台框架的 5 个核心 P0 级功能，所有功能均包含完整的测试、演示命令和文档。
+完成了 AideCMS CMS 平台框架的 5 个核心 P0 级功能，所有功能均包含完整的测试、演示命令和文档。
 
 ## 实现的功能
 
@@ -614,7 +614,7 @@ h.GET("/health/ready", framework.ReadinessEndpoint(hc))
 所有功能均包含详细的 GoDoc 注释，运行以下命令生成文档:
 ```bash
 godoc -http=:6060
-# 访问 http://localhost:6060/pkg/github.com/clarkgo/clarkgo/
+# 访问 http://localhost:6060/pkg/github.com/chenyusolar/aidecms/
 ```
 
 ### 使用示例
@@ -649,4 +649,4 @@ godoc -http=:6060
 - 完整的文档注释
 
 ## 致谢
-ClarkGo CMS 平台框架核心功能实现完成！🎉
+AideCMS CMS 平台框架核心功能实现完成！🎉

@@ -1,4 +1,4 @@
-# ClarkGo Artisan 命令行工具
+# AideCMS Artisan 命令行工具
 
 ## 基本使用
 

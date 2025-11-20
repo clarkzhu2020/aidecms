@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/clarkgo/clarkgo/pkg/database"
-	"github.com/clarkgo/clarkgo/pkg/seo"
+	"github.com/chenyusolar/aidecms/pkg/database"
+	"github.com/chenyusolar/aidecms/pkg/seo"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

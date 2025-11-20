@@ -2,7 +2,7 @@
 
 ## 概述
 
-成功为 ClarkGo 框架添加了加密货币交易所集成功能，支持 Coinbase 和 KuCoin 两个主流交易所。
+成功为 AideCMS 框架添加了加密货币交易所集成功能，支持 Coinbase 和 KuCoin 两个主流交易所。
 
 ## 完成时间
 
@@ -357,7 +357,7 @@ go run . artisan exchange balance-all USDT
 ### Go 代码
 
 ```go
-import "github.com/clarkgo/clarkgo/pkg/web3"
+import "github.com/chenyusolar/aidecms/pkg/web3"
 
 // 初始化
 config := web3.LoadConfig()
@@ -467,9 +467,9 @@ for exchange, price := range prices {
 **解决方案**: 统一修改为小写 `package controllers`
 
 ### 3. 导入路径错误
-**问题**: Web3Controller 使用错误的模块路径 `github.com/chenyusolar/clarkgo`
+**问题**: Web3Controller 使用错误的模块路径 `github.com/chenyusolar/aidecms`
 
-**解决方案**: 修正为 `github.com/clarkgo/clarkgo`
+**解决方案**: 修正为 `github.com/chenyusolar/aidecms`
 
 ### 4. Cobra 命令执行方式
 **问题**: 直接调用 `ExchangeCommand.Execute()` 无法正确传递参数
@@ -494,7 +494,7 @@ for exchange, price := range prices {
 
 ## 总结
 
-成功为 ClarkGo 框架添加了完整的加密货币交易所集成功能，包括：
+成功为 AideCMS 框架添加了完整的加密货币交易所集成功能，包括：
 
 ✅ **2 个交易所客户端**（Coinbase, KuCoin）  
 ✅ **统一的管理器接口**（ExchangeManager）  

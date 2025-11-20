@@ -1,4 +1,4 @@
-# ClarkGo CMS Phase 4 完成总结
+# AideCMS CMS Phase 4 完成总结
 
 **完成时间：** 2024-01-15  
 **功能模块：** 云存储集成  
@@ -10,7 +10,7 @@
 
 ### 实现目标
 
-为 ClarkGo CMS 提供统一的云存储抽象层，支持多种存储后端，使项目能够无缝切换本地文件系统、阿里云 OSS 和 AWS S3 存储方式。
+为 AideCMS CMS 提供统一的云存储抽象层，支持多种存储后端，使项目能够无缝切换本地文件系统、阿里云 OSS 和 AWS S3 存储方式。
 
 ### 核心价值
 
@@ -372,7 +372,7 @@ S3_BASE_URL=https://d123456.cloudfront.net
 
 ```bash
 cd /home/chenyu/chenyu-project/clarkgo
-go build -o bin/clarkgo cmd/clarkgo/main.go
+go build -o bin/aidecms cmd/aidecms/main.go
 ```
 
 **预期结果：** 编译通过，无错误
@@ -402,7 +402,7 @@ curl -X POST http://localhost:8888/api/cms/media/upload \
 STORAGE_DRIVER=local  # 改为 oss 或 s3
 
 # 重启服务
-./bin/clarkgo
+./bin/aidecms
 
 # 再次上传
 curl -X POST ...  # 文件应保存到新的存储
@@ -608,14 +608,14 @@ KODO_BUCKET=...
 
 ### 项目进度
 
-**ClarkGo CMS 完成度：100%** 🎉
+**AideCMS CMS 完成度：100%** 🎉
 
 - ✅ Phase 1: 核心 CMS 功能 (文章/分类/标签/媒体/RBAC)
 - ✅ Phase 2: Swagger 文档 + SEO 模块
 - ✅ Phase 3: 菜单系统 + 评论系统
 - ✅ Phase 4: 云存储集成 ✨ **本阶段**
 
-**ClarkGo 现已具备完整的企业级 CMS 能力！** 🚀
+**AideCMS 现已具备完整的企业级 CMS 能力！** 🚀
 
 ---
 
@@ -645,5 +645,5 @@ KODO_BUCKET=...
 ---
 
 **文档版本：** v1.0  
-**维护团队：** ClarkGo CMS Team  
+**维护团队：** AideCMS CMS Team  
 **最后更新：** 2024-01-15

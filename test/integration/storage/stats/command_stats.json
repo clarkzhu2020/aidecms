@@ -1,0 +1,26 @@
+{
+  "cache:clear": {
+    "Name": "cache:clear",
+    "Count": 1,
+    "TotalTime": 4797586,
+    "LastUsed": "2025-11-20T14:09:16.03859736-08:00"
+  },
+  "help": {
+    "Name": "help",
+    "Count": 1,
+    "TotalTime": 9506427,
+    "LastUsed": "2025-11-20T14:11:29.934098372-08:00"
+  },
+  "make:controller": {
+    "Name": "make:controller",
+    "Count": 1,
+    "TotalTime": 5322157,
+    "LastUsed": "2025-11-20T14:09:14.819423847-08:00"
+  },
+  "migrate": {
+    "Name": "migrate",
+    "Count": 2,
+    "TotalTime": 265114602,
+    "LastUsed": "2025-11-20T14:11:30.619728448-08:00"
+  }
+}

@@ -48,6 +48,11 @@ func (c *Client) Close() error {
 	return nil
 }
 
+// Ping 检查连接
+func (c *Client) Ping(ctx context.Context) (string, error) {
+	return c.client.Ping(ctx).Result()
+}
+
 // Get 获取键值
 func (c *Client) Get(ctx context.Context, key string) (string, error) {
 	return c.client.Get(ctx, key).Result()

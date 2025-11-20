@@ -30,7 +30,7 @@ func TestRedisConnection(t *testing.T) {
 
 	// 只有当Redis启用时才测试
 	if app.Redis != nil {
-		_, err := app.Redis.Ping(context.Background()).Result()
+		_, err := app.Redis.Ping(context.Background())
 		assert.NoError(t, err)
 	}
 }

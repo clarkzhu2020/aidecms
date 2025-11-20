@@ -22,3 +22,5 @@
 2025/11/19 20:04:15 [2025-11-19 20:04:15] Command completed in 183.412µs
 2025/11/19 20:14:02 [2025-11-19 20:14:02] Command started: [exchange list]
 2025/11/19 20:14:02 [2025-11-19 20:14:02] Command completed in 208.309µs
+2025/11/20 14:09:28 [2025-11-20 14:09:28] Command started: [cache:clear]
+2025/11/20 14:09:28 [2025-11-20 14:09:28] Command completed in 6.396551ms

@@ -76,13 +76,13 @@ func (l *Logger) Init() error {
 	}
 	hlog.SetOutput(output)
 
-	// 设置时间格式
-	if l.Config.TimeFormat == "" {
-		l.Config.TimeFormat = "2006-01-02 15:04:05"
-	}
-
+    // 如果配置为 JSON 格式，这里可以扩展使用 zap 或 slog
+    // 目前 hlog 默认是 text 格式，这里保留扩展点
+    // 实际生产环境建议使用 hertz-contrib/logger/zap
+    
 	return nil
 }
+
 
 // Debug 调试日志
 func (l *Logger) Debug(args ...interface{}) {

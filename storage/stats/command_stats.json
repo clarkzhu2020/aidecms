@@ -5,6 +5,12 @@
     "TotalTime": 4985244,
     "LastUsed": "2025-11-19T17:33:07.548897145-08:00"
   },
+  "cache:clear": {
+    "Name": "cache:clear",
+    "Count": 1,
+    "TotalTime": 6396551,
+    "LastUsed": "2025-11-20T14:09:28.434548743-08:00"
+  },
   "event:test": {
     "Name": "event:test",
     "Count": 1,

@@ -55,6 +55,9 @@ func main() {
 			})
 		}
 
+		// 监控路由
+		router.GET("/metrics", framework.PrometheusHandler())
+
 		// Web路由
 		router.GET("/", func(ctx context.Context, c *framework.RequestContext) {
 			c.String(200, "Welcome to AideCMS with AI capabilities! See /doc/ai.md for AI integration guide.")
@@ -66,6 +69,7 @@ func main() {
 		framework.Cors(),
 		framework.Recovery(),
 		framework.Logger(),
+		framework.PrometheusMiddleware(),
 	)
 
 	// 注册静态文件目录

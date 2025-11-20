@@ -103,7 +103,7 @@ AideCMS 是一个基于 CloudWeGo Hertz 框架开发的企业级 CMS 平台框�
 
 ```bash
 # 克隆项目
-git clone https://github.com/chenyusolar/aidecms.git
+git clone https://github.com/zhuclark2020/aidecms.git
 cd clarkgo
 
 # 安装依赖
@@ -1718,7 +1718,7 @@ open http://localhost:8888/swagger/index.html
 
 ### 报告问题
 
-如果发现 Bug 或有功能建议，请[创建 Issue](https://github.com/chenyusolar/aidecms/issues)。
+如果发现 Bug 或有功能建议，请[创建 Issue](https://github.com/zhuclark2020/aidecms/issues)。
 
 ## 📝 更新日志
 
@@ -1766,7 +1766,7 @@ open http://localhost:8888/swagger/index.html
 
 - 作者：Clark Zhu
 - GitHub: [@chenyusolar](https://github.com/chenyusolar)
-- 项目地址: [https://github.com/chenyusolar/aidecms](https://github.com/chenyusolar/aidecms)
+- 项目地址: [https://github.com/zhuclark2020/aidecms](https://github.com/zhuclark2020/aidecms)
 
 ---
 

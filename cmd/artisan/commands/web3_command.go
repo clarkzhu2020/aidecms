@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/chenyusolar/aidecms/pkg/web3"
+	"github.com/clarkzhu2020/aidecms/pkg/web3"
 	"github.com/spf13/cobra"
 )
 

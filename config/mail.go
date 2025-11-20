@@ -6,7 +6,7 @@ import (
 	"net/smtp"
 	"strconv"
 
-	envConfig "github.com/chenyusolar/aidecms/pkg/config"
+	envConfig "github.com/clarkzhu2020/aidecms/pkg/config"
 )
 
 // MailConfig 邮件配置

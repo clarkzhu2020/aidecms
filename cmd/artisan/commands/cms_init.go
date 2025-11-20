@@ -3,10 +3,10 @@ package commands
 import (
 	"fmt"
 
-	"github.com/chenyusolar/aidecms/database/migrations"
-	"github.com/chenyusolar/aidecms/internal/app/models"
-	"github.com/chenyusolar/aidecms/internal/app/services"
-	"github.com/chenyusolar/aidecms/pkg/database"
+	"github.com/clarkzhu2020/aidecms/database/migrations"
+	"github.com/clarkzhu2020/aidecms/internal/app/models"
+	"github.com/clarkzhu2020/aidecms/internal/app/services"
+	"github.com/clarkzhu2020/aidecms/pkg/database"
 	"github.com/spf13/cobra"
 )
 

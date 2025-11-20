@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/chenyusolar/aidecms/pkg/ratelimit"
+	"github.com/clarkzhu2020/aidecms/pkg/ratelimit"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )

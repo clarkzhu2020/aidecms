@@ -3,10 +3,10 @@ package main
 import (
 	"context"
 
-	_ "github.com/chenyusolar/aidecms/docs" // Swagger docs
-	"github.com/chenyusolar/aidecms/pkg/framework"
-	"github.com/chenyusolar/aidecms/pkg/swagger"
-	"github.com/chenyusolar/aidecms/routes"
+	_ "github.com/clarkzhu2020/aidecms/docs" // Swagger docs
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
+	"github.com/clarkzhu2020/aidecms/pkg/swagger"
+	"github.com/clarkzhu2020/aidecms/routes"
 )
 
 // @title           AideCMS API

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/chenyusolar/aidecms/config"
-	"github.com/chenyusolar/aidecms/internal/app/models"
+	"github.com/clarkzhu2020/aidecms/config"
+	"github.com/clarkzhu2020/aidecms/internal/app/models"
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"

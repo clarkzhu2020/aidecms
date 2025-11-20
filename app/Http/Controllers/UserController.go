@@ -3,8 +3,8 @@ package controllers
 import (
 	"context"
 
-	"github.com/chenyusolar/aidecms/internal/app/services"
-	"github.com/chenyusolar/aidecms/pkg/framework"
+	"github.com/clarkzhu2020/aidecms/internal/app/services"
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
 	"golang.org/x/crypto/bcrypt"
 )
 

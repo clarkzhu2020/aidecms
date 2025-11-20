@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/chenyusolar/aidecms/pkg/framework"
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
 	"github.com/cloudwego/hertz/pkg/protocol"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	httpSwagger "github.com/swaggo/http-swagger"

@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/chenyusolar/aidecms/pkg/web3"
+	"github.com/clarkzhu2020/aidecms/pkg/web3"
 )
 
 func main() {

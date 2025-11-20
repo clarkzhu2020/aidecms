@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/chenyusolar/aidecms/cmd/artisan/commands"
-	"github.com/chenyusolar/aidecms/cmd/artisan/commands/generator"
-	"github.com/chenyusolar/aidecms/cmd/artisan/stats"
-	"github.com/chenyusolar/aidecms/config"
+	"github.com/clarkzhu2020/aidecms/cmd/artisan/commands"
+	"github.com/clarkzhu2020/aidecms/cmd/artisan/commands/generator"
+	"github.com/clarkzhu2020/aidecms/cmd/artisan/stats"
+	"github.com/clarkzhu2020/aidecms/config"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 )

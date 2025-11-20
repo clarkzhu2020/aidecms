@@ -191,5 +191,5 @@ A: 检查 Node.js 版本（需要 18+）和依赖安装。
 
 ## 📞 支持
 
-- GitHub Issues: https://github.com/chenyusolar/aidecms/issues
-- 文档: https://github.com/chenyusolar/aidecms/tree/main/doc
+- GitHub Issues: https://github.com/zhuclark2020/aidecms/issues
+- 文档: https://github.com/zhuclark2020/aidecms/tree/main/doc

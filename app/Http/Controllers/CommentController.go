@@ -5,10 +5,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/chenyusolar/aidecms/internal/app/models"
-	"github.com/chenyusolar/aidecms/pkg/database"
-	"github.com/chenyusolar/aidecms/pkg/response"
-	"github.com/chenyusolar/aidecms/pkg/validator"
+	"github.com/clarkzhu2020/aidecms/internal/app/models"
+	"github.com/clarkzhu2020/aidecms/pkg/database"
+	"github.com/clarkzhu2020/aidecms/pkg/response"
+	"github.com/clarkzhu2020/aidecms/pkg/validator"
 	"github.com/cloudwego/hertz/pkg/app"
 	"gorm.io/gorm"
 )

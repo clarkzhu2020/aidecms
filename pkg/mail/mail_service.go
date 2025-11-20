@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/chenyusolar/aidecms/config"
+	"github.com/clarkzhu2020/aidecms/config"
 )
 
 // MailService 邮件服务

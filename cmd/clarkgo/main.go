@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/chenyusolar/aidecms/database/migrations"
-	"github.com/chenyusolar/aidecms/pkg/framework"
+	"github.com/clarkzhu2020/aidecms/database/migrations"
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
 )
 
 func main() {

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/chenyusolar/aidecms/pkg/event"
+	"github.com/clarkzhu2020/aidecms/pkg/event"
 )
 
 // EventTest 测试事件系统

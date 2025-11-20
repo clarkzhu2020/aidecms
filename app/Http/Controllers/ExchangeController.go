@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/chenyusolar/aidecms/pkg/response"
-	"github.com/chenyusolar/aidecms/pkg/web3"
+	"github.com/clarkzhu2020/aidecms/pkg/response"
+	"github.com/clarkzhu2020/aidecms/pkg/web3"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

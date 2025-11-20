@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/chenyusolar/aidecms/internal/app/models"
-	"github.com/chenyusolar/aidecms/internal/app/services"
-	"github.com/chenyusolar/aidecms/pkg/database"
-	"github.com/chenyusolar/aidecms/pkg/framework"
+	"github.com/clarkzhu2020/aidecms/internal/app/models"
+	"github.com/clarkzhu2020/aidecms/internal/app/services"
+	"github.com/clarkzhu2020/aidecms/pkg/database"
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

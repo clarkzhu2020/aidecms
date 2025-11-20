@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/chenyusolar/aidecms/pkg/schedule"
+	"github.com/clarkzhu2020/aidecms/pkg/schedule"
 )
 
 // ScheduleWork 启动调度器工作进程

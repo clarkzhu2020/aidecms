@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/chenyusolar/aidecms/config"
-	"github.com/chenyusolar/aidecms/internal/app/models"
-	"github.com/chenyusolar/aidecms/pkg/database"
-	"github.com/chenyusolar/aidecms/pkg/upload"
+	"github.com/clarkzhu2020/aidecms/config"
+	"github.com/clarkzhu2020/aidecms/internal/app/models"
+	"github.com/clarkzhu2020/aidecms/pkg/database"
+	"github.com/clarkzhu2020/aidecms/pkg/upload"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

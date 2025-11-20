@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/chenyusolar/aidecms/pkg/health"
+	"github.com/clarkzhu2020/aidecms/pkg/health"
 )
 
 // HealthCommand demonstrates health check functionality

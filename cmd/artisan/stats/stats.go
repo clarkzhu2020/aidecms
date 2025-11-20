@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/chenyusolar/aidecms/cmd/artisan/commands"
+	"github.com/clarkzhu2020/aidecms/cmd/artisan/commands"
 )
 
 type StatRecorder interface {

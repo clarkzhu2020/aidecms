@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/chenyusolar/aidecms/internal/app/models"
-	"github.com/chenyusolar/aidecms/pkg/database"
+	"github.com/clarkzhu2020/aidecms/internal/app/models"
+	"github.com/clarkzhu2020/aidecms/pkg/database"
 	"gorm.io/gorm"
 )
 

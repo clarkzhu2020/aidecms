@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chenyusolar/aidecms/config"
-	"github.com/chenyusolar/aidecms/database/migrations"
+	"github.com/clarkzhu2020/aidecms/config"
+	"github.com/clarkzhu2020/aidecms/database/migrations"
 )
 
 func Migrate(args []string) {

@@ -7,7 +7,7 @@ import (
 	"syscall"
 	"time"
 
-	q "github.com/chenyusolar/aidecms/pkg/queue"
+	q "github.com/clarkzhu2020/aidecms/pkg/queue"
 )
 
 func QueueWork(args []string) {

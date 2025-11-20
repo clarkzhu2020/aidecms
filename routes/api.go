@@ -3,11 +3,11 @@ package routes
 import (
 	"fmt"
 
-	controllers "github.com/chenyusolar/aidecms/app/Http/Controllers"
-	middleware "github.com/chenyusolar/aidecms/app/Http/Middleware"
-	"github.com/chenyusolar/aidecms/config"
-	"github.com/chenyusolar/aidecms/internal/app/adapters"
-	"github.com/chenyusolar/aidecms/pkg/framework"
+	controllers "github.com/clarkzhu2020/aidecms/app/Http/Controllers"
+	middleware "github.com/clarkzhu2020/aidecms/app/Http/Middleware"
+	"github.com/clarkzhu2020/aidecms/config"
+	"github.com/clarkzhu2020/aidecms/internal/app/adapters"
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
 )
 
 func APIRoutes(app *framework.Application) {

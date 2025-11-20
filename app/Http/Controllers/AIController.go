@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/chenyusolar/aidecms/pkg/ai"
+	"github.com/clarkzhu2020/aidecms/pkg/ai"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 )

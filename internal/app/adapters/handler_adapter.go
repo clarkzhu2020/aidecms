@@ -3,7 +3,7 @@ package adapters
 import (
 	"context"
 
-	"github.com/chenyusolar/aidecms/pkg/framework"
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

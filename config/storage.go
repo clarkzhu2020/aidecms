@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/chenyusolar/aidecms/pkg/upload"
+	"github.com/clarkzhu2020/aidecms/pkg/upload"
 )
 
 // StorageDriver 存储驱动类型

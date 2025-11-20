@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chenyusolar/aidecms/database/migrations"
+	"github.com/clarkzhu2020/aidecms/database/migrations"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/chenyusolar/aidecms/pkg/ai"
-	envConfig "github.com/chenyusolar/aidecms/pkg/config"
+	"github.com/clarkzhu2020/aidecms/pkg/ai"
+	envConfig "github.com/clarkzhu2020/aidecms/pkg/config"
 )
 
 // AIConfig AI配置结构

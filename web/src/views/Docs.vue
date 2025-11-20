@@ -36,7 +36,7 @@
                 <h3>安装</h3>
                 <p>使用 Go modules 安装 AideCMS：</p>
                 <div class="code-block">
-                  <pre><code>go get github.com/chenyusolar/aidecms</code></pre>
+                  <pre><code>go get github.com/zhuclark2020/aidecms</code></pre>
                 </div>
 
                 <h3>创建项目</h3>
@@ -44,7 +44,7 @@
                 <div class="code-block">
                   <pre><code>mkdir myproject && cd myproject
 go mod init myproject
-go get github.com/chenyusolar/aidecms</code></pre>
+go get github.com/zhuclark2020/aidecms</code></pre>
                 </div>
 
                 <h3>基础示例</h3>
@@ -54,7 +54,7 @@ go get github.com/chenyusolar/aidecms</code></pre>
 
 import (
     "context"
-    "github.com/chenyusolar/aidecms/pkg/framework"
+    "github.com/zhuclark2020/aidecms/pkg/framework"
 )
 
 func main() {
@@ -94,7 +94,7 @@ func main() {
 
                 <h3>使用示例</h3>
                 <div class="code-block">
-                  <pre><code>import "github.com/chenyusolar/aidecms/pkg/ai"
+                  <pre><code>import "github.com/zhuclark2020/aidecms/pkg/ai"
 
 // 创建 AI 客户端
 config := &ai.Config{
@@ -131,7 +131,7 @@ for chunk := range stream {
 
                 <h3>使用示例</h3>
                 <div class="code-block">
-                  <pre><code>import "github.com/chenyusolar/aidecms/pkg/web3"
+                  <pre><code>import "github.com/zhuclark2020/aidecms/pkg/web3"
 
 manager := web3.GetManager()
 
@@ -165,7 +165,7 @@ balances, _ := addresses.GetAllBalances(ctx)</code></pre>
 
                 <h3>使用示例</h3>
                 <div class="code-block">
-                  <pre><code>import "github.com/chenyusolar/aidecms/pkg/web3"
+                  <pre><code>import "github.com/zhuclark2020/aidecms/pkg/web3"
 
 manager := web3.GetExchangeManager()
 
@@ -190,7 +190,7 @@ for exchange, price := range prices {
 
                 <h3>使用示例</h3>
                 <div class="code-block">
-                  <pre><code>import "github.com/chenyusolar/aidecms/pkg/schedule"
+                  <pre><code>import "github.com/zhuclark2020/aidecms/pkg/schedule"
 
 scheduler := schedule.NewScheduler()
 
@@ -218,7 +218,7 @@ scheduler.NewTask("custom").Cron("0 */2 * * *").Do(func() error {
 
                 <h3>使用示例</h3>
                 <div class="code-block">
-                  <pre><code>import "github.com/chenyusolar/aidecms/pkg/queue"
+                  <pre><code>import "github.com/zhuclark2020/aidecms/pkg/queue"
 
 q := queue.NewQueue("redis")
 

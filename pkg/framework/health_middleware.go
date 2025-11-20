@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/chenyusolar/aidecms/pkg/health"
+	"github.com/clarkzhu2020/aidecms/pkg/health"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )

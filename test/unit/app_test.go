@@ -3,7 +3,7 @@ package unit_test
 import (
 	"testing"
 
-	"github.com/chenyusolar/aidecms/pkg/framework"
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
 	"github.com/stretchr/testify/assert"
 )
 

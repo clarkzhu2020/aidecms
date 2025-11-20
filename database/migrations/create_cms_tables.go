@@ -1,8 +1,8 @@
 package migrations
 
 import (
-	"github.com/chenyusolar/aidecms/internal/app/models"
-	"github.com/chenyusolar/aidecms/pkg/database"
+	"github.com/clarkzhu2020/aidecms/internal/app/models"
+	"github.com/clarkzhu2020/aidecms/pkg/database"
 )
 
 // CreateCMSTables 创建CMS相关表

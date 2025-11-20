@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chenyusolar/aidecms/pkg/ai"
+	"github.com/clarkzhu2020/aidecms/pkg/ai"
 )
 
 func main() {

@@ -3,7 +3,7 @@ package routes
 import (
 	"context"
 
-	"github.com/chenyusolar/aidecms/pkg/framework"
+	"github.com/clarkzhu2020/aidecms/pkg/framework"
 )
 
 // TestRoutes 测试路由

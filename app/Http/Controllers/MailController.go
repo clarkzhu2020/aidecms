@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/chenyusolar/aidecms/pkg/mail"
+	"github.com/clarkzhu2020/aidecms/pkg/mail"
 	"github.com/cloudwego/hertz/pkg/app"
 )
 

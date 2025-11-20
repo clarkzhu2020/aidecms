@@ -697,6 +697,83 @@ port := config.GetEnvInt("DB_PORT", 3306)
 debug := config.GetEnvBool("APP_DEBUG", false)
 ```
 
+
+## 🤖 AI 大模型与对话功能（BiruAI）
+
+AideCMS 集成 CloudWeGo Eino 框架，内置强大的 AI 大模型能力，支持 OpenAI、Anthropic、豆包、通义千问、ChatGLM 等主流模型，统一接口，支持多轮对话、流式输出、嵌入向量、灵活配置。
+
+### 主要特性
+- 多模型支持：OpenAI、Anthropic、豆包、通义千问、ChatGLM
+- 统一 API：/api/ai/chat、/completion、/embedding、/conversation
+- 多轮对话与上下文管理
+- 流式输出（SSE）与嵌入向量生成
+- 命令行一键配置与测试
+- 灵活配置与热切换
+
+### 快速上手
+```bash
+# 配置 OpenAI
+go run cmd/artisan/main.go ai:setup openai sk-your-api-key gpt-4
+# 配置千问
+go run cmd/artisan/main.go ai:setup qianwen your-api-key qwen-max
+# 测试连接
+go run cmd/artisan/main.go ai:test
+# 聊天
+go run cmd/artisan/main.go ai:chat "你好，介绍下AideCMS"
+```
+
+### 主要 API 路由
+- POST `/api/ai/chat`         # 聊天/对话
+- POST `/api/ai/completion`   # 文本补全
+- POST `/api/ai/embedding`    # 向量嵌入
+- POST `/api/ai/conversation` # 多轮对话
+- GET  `/api/ai/models`       # 支持模型列表
+
+#### 聊天 API 示例
+```bash
+curl -X POST http://localhost:8888/api/ai/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "你好，请介绍一下 Go 语言", "model": "qianwen"}'
+```
+
+#### 嵌入向量 API 示例
+```bash
+curl -X POST http://localhost:8888/api/ai/embedding \
+  -H "Content-Type: application/json" \
+  -d '{"input": ["Hello world", "你好世界"], "model": "openai"}'
+```
+
+### 代码集成示例
+```go
+import "github.com/clarkzhu2020/aidecms/pkg/ai"
+config := &ai.Config{Provider: "openai", APIKey: "sk-xxx", Model: "gpt-4"}
+client, _ := ai.NewClient(config)
+resp, _ := client.CreateCompletion(context.Background(), "请介绍Go语言")
+fmt.Println(resp)
+```
+
+### 配置与管理
+- 命令行管理：`ai:config list|show|delete|default`
+- 配置文件：`config/ai/openai.json`、`config/ai/qianwen.json` 等
+- 支持环境变量存储敏感信息
+
+### 支持模型一览
+| 提供商     | 典型模型           | 能力         |
+|------------|--------------------|--------------|
+| OpenAI     | gpt-4, gpt-3.5     | 聊天/补全/嵌入 |
+| Anthropic  | claude-3-opus等    | 聊天/补全     |
+| 豆包       | ep-xxx             | 聊天/补全/嵌入 |
+| 千问       | qwen-max等         | 聊天/补全/嵌入 |
+| ChatGLM    | glm-4等            | 聊天/补全     |
+
+### 最佳实践
+- 推荐使用流式输出提升体验
+- 合理设置超时与重试
+- 监控 API 调用与日志
+- 敏感信息用环境变量管理
+
+详细用法见 [AI 集成文档](doc/ai.md)
+
 ## 📚 核心功能详解
 
 ### 1. 任务调度系统

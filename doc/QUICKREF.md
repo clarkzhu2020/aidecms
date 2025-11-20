@@ -556,7 +556,7 @@ health_check_duration_seconds
 
 - 完整文档: `doc/PHASE5_SUMMARY.md`
 - API 文档: `godoc -http=:6060`
-- 源码: https://github.com/zhuclark2020/aidecms
+- 源码: https://github.com/clarkzhu2020/aidecms
 - 问题反馈: GitHub Issues
 
 ---

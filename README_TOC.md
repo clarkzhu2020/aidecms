@@ -122,7 +122,7 @@
 - [主 README](README.md) - 完整文档
 - [Phase 5 总结](doc/PHASE5_SUMMARY.md) - 详细实现文档
 - [快速参考](doc/QUICKREF.md) - 代码速查手册
-- [GitHub 仓库](https://github.com/zhuclark2020/aidecms)
+- [GitHub 仓库](https://github.com/clarkzhu2020/aidecms)
 
 ---
 

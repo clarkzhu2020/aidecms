@@ -445,6 +445,6 @@ for {
 ## 更多信息
 
 - [CloudWeGo Eino 官方文档](https://github.com/cloudwego/eino)
-- [AideCMS 项目主页](https://github.com/zhuclark2020/aidecms)
+- [AideCMS 项目主页](https://github.com/clarkzhu2020/aidecms)
 - [API 参考文档](./api.md)
 - [部署指南](./deployment.md)

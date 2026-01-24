@@ -1,0 +1,10 @@
+2025/11/20 14:09:14 [2025-11-20 14:09:14] Command started: [make:controller TestController]
+2025/11/20 14:09:14 [2025-11-20 14:09:14] Command completed in 5.322157ms
+2025/11/20 14:09:15 [2025-11-20 14:09:15] Command started: [migrate]
+2025/11/20 14:09:15 [2025-11-20 14:09:15] Command completed in 243.910266ms
+2025/11/20 14:09:16 [2025-11-20 14:09:16] Command started: [cache:clear]
+2025/11/20 14:09:16 [2025-11-20 14:09:16] Command completed in 4.797586ms
+2025/11/20 14:11:29 [2025-11-20 14:11:29] Command started: [help]
+2025/11/20 14:11:29 [2025-11-20 14:11:29] Command completed in 9.506427ms
+2025/11/20 14:11:30 [2025-11-20 14:11:30] Command started: [migrate]
+2025/11/20 14:11:30 [2025-11-20 14:11:30] Command completed in 21.204336ms

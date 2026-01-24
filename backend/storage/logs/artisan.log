@@ -1,0 +1,26 @@
+2025/09/04 13:45:37 [2025-09-04 13:45:37] Command started: migrate []
+2025/09/04 13:46:27 [2025-09-04 13:46:27] Command started: migrate []
+2025/09/04 13:46:45 [2025-09-04 13:46:45] Command started: migrate []
+2025/09/04 13:47:53 [2025-09-04 13:47:53] Command started: migrate []
+2025/09/04 13:48:15 [2025-09-04 13:48:15] Command started: migrate []
+2025/09/04 13:48:15 [2025-09-04 13:48:15] Command completed in 46.261249ms
+2025/09/04 14:33:06 [2025-09-04 14:33:06] Command started: artisan [make:command TestCommand]
+2025/09/04 14:33:06 [2025-09-04 14:33:06] Command completed in 4.502502ms
+2025/11/19 17:32:52 [2025-11-19 17:32:52] Command started: artisan [event:test]
+2025/11/19 17:32:52 [2025-11-19 17:32:52] Command completed in 238.11µs
+2025/11/19 17:33:07 [2025-11-19 17:33:07] Command started: artisan [help]
+2025/11/19 17:33:07 [2025-11-19 17:33:07] Command completed in 244.632µs
+2025/11/19 17:34:03 [2025-11-19 17:34:03] Command started: [event:test]
+2025/11/19 17:34:04 [2025-11-19 17:34:04] Command completed in 1.201720621s
+2025/11/19 17:41:49 [2025-11-19 17:41:49] Command started: [ratelimit demo]
+2025/11/19 17:41:49 [2025-11-19 17:41:49] Command completed in 611.227µs
+2025/11/19 17:48:14 [2025-11-19 17:48:14] Command started: [health demo]
+2025/11/19 17:48:14 [2025-11-19 17:48:14] Command completed in 312.010077ms
+2025/11/19 20:03:35 [2025-11-19 20:03:35] Command started: [exchange list]
+2025/11/19 20:03:35 [2025-11-19 20:03:35] Command completed in 248.824µs
+2025/11/19 20:04:15 [2025-11-19 20:04:15] Command started: [exchange list]
+2025/11/19 20:04:15 [2025-11-19 20:04:15] Command completed in 183.412µs
+2025/11/19 20:14:02 [2025-11-19 20:14:02] Command started: [exchange list]
+2025/11/19 20:14:02 [2025-11-19 20:14:02] Command completed in 208.309µs
+2025/11/20 14:09:28 [2025-11-20 14:09:28] Command started: [cache:clear]
+2025/11/20 14:09:28 [2025-11-20 14:09:28] Command completed in 6.396551ms

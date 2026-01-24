@@ -1,0 +1,13 @@
+package {{.Namespace}}
+
+import (
+	"context"
+
+	"github.com/cloudwego/hertz/pkg/app"
+)
+
+type {{.Name}} struct {}
+
+func (c *{{.Name}}) Index(ctx context.Context, reqCtx *app.RequestContext) {
+	// Controller logic here
+}

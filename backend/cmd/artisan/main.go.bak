@@ -1,0 +1,181 @@
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+	"os"
+	"time"
+
+	"github.com/clarkgo/clarkgo/cmd/artisan/commands"
+	"github.com/clarkgo/clarkgo/cmd/artisan/commands/generator"
+	"github.com/clarkgo/clarkgo/cmd/artisan/stats"
+	"github.com/clarkgo/clarkgo/config"
+	"github.com/cloudwego/hertz/pkg/app"
+	"github.com/cloudwego/hertz/pkg/app/server"
+)
+
+func main() {
+	// Initialize database
+	config.InitDB()
+
+	// Check if running as CLI or web server
+	if len(os.Args) > 1 && os.Args[1] == "artisan" {
+		runArtisan()
+		return
+	}
+
+	// Otherwise run as web server
+	runWebServer()
+}
+
+func runArtisan() {
+	startTime := time.Now()
+
+	// Initialize database
+	config.InitDB()
+
+	// 确保日志目录存在
+	if err := os.MkdirAll("storage/logs", 0755); err != nil {
+		fmt.Printf("Failed to create logs directory: %v\n", err)
+		return
+	}
+
+	// 初始化日志
+	logFile, err := os.OpenFile("storage/logs/artisan.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		fmt.Printf("Failed to open log file: %v\n", err)
+		return
+	}
+	defer logFile.Close()
+
+	logger := log.New(logFile, "", log.LstdFlags)
+	logger.Printf("[%s] Command started: %s %v",
+		time.Now().Format("2006-01-02 15:04:05"),
+		os.Args[1],
+		os.Args[2:])
+
+	if len(os.Args) < 2 {
+		showHelp()
+		return
+	}
+
+	command := os.Args[1]
+	args := os.Args[2:]
+
+	switch command {
+	case "make:command":
+		generator.NewCommand().Handle(args)
+	case "make:controller":
+		generator.NewCommand().Handle(args)
+	case "make:model":
+		generator.NewCommand().Handle(args)
+	case "make:middleware":
+		generator.NewCommand().Handle(args)
+	case "migrate":
+		commands.Migrate(args)
+	case "help":
+		showHelp()
+	case "stats:show":
+		commands.ShowStats(args)
+	case "stats:reset":
+		commands.ResetStats(args)
+	case "stats:export":
+		commands.ExportStats(args)
+	case "stats:chart":
+		stats.GenerateChart(commands.GetCommandStats())
+	case "stats:cleanup":
+		if len(args) > 0 {
+			threshold, err := time.ParseDuration(args[0])
+			if err != nil {
+				fmt.Printf("Invalid duration format: %v\n", err)
+				return
+			}
+			stats.CleanupOldStats(commands.GetCommandStats(), time.Now().Add(-threshold))
+		} else {
+			stats.CleanupOldStats(commands.GetCommandStats(), time.Now().Add(-30*24*time.Hour)) // Default: 30 days
+		}
+	case "stats:check":
+		if len(args) > 0 {
+			threshold, err := time.ParseDuration(args[0])
+			if err != nil {
+				fmt.Printf("Invalid duration format: %v\n", err)
+				return
+			}
+			stats.CheckForAnomalies(commands.GetCommandStats(), threshold)
+		} else {
+			stats.CheckForAnomalies(commands.GetCommandStats(), 5*time.Second) // Default: 5 seconds
+		}
+	case "alert:setup":
+		commands.SetupEmailAlert(args)
+	case "alert:test":
+		commands.SendTestEmail(args)
+	case "queue:process":
+		commands.ProcessQueue()
+	case "queue:status":
+		commands.ShowQueueStatus(args)
+	case "queue:retry":
+		commands.RetryFailedJobs(args)
+	case "queue:clean":
+		commands.CleanQueue(args)
+	case "queue:priority":
+		commands.SetPriority(args)
+	case "queue:stats":
+		commands.ShowQueueStats(args)
+
+	default:
+		fmt.Printf("Unknown command: %s\n", command)
+		showHelp()
+	}
+
+	duration := time.Since(startTime)
+	logger.Printf("[%s] Command completed in %v",
+		time.Now().Format("2006-01-02 15:04:05"),
+		duration)
+
+	// 记录命令使用统计
+	commands.RecordCommandUsage(command, duration)
+}
+
+func runWebServer() {
+	h := server.Default(server.WithHostPorts("0.0.0.0:8080"))
+
+	// Register routes
+	h.GET("/", func(ctx context.Context, c *app.RequestContext) {
+		c.String(200, "Welcome to ClarkGo")
+	})
+
+	// Start server
+	h.Spin()
+}
+
+func showHelp() {
+	fmt.Println("ClarkGo Artisan Tool")
+	fmt.Println("Usage: go run . artisan <command> [arguments]")
+	fmt.Println("\nAvailable commands:")
+	fmt.Println("  make:controller <name>\tCreate a new controller")
+	fmt.Println("  make:model <name>\t\tCreate a new model")
+	fmt.Println("  make:middleware <name>\tCreate a new middleware")
+	fmt.Println("  migrate\t\t\tRun database migrations")
+	fmt.Println("  help\t\t\t\tShow this help message")
+	fmt.Println("\nStatistics commands:")
+	fmt.Println("  stats:show\t\t\tShow command usage statistics")
+	fmt.Println("  stats:reset\t\t\tReset command statistics")
+	fmt.Println("  stats:export <format>\tExport statistics (json/csv)")
+	fmt.Println("  stats:chart\t\t\tGenerate usage chart")
+	fmt.Println("  stats:cleanup\t\tClean up old statistics")
+	fmt.Println("  stats:check\t\t\tCheck for performance anomalies")
+	fmt.Println("\nAlert commands:")
+	fmt.Println("  alert:setup <file>\tSetup email alert configuration")
+	fmt.Println("  alert:test\t\tSend test email")
+	fmt.Println("\nQueue commands:")
+	fmt.Println("  queue:process\t\tProcess email queue")
+	fmt.Println("  queue:status\t\tShow queue status")
+	fmt.Println("  queue:retry\t\tRetry failed jobs")
+	fmt.Println("  queue:clean\t\tClean old jobs")
+	fmt.Println("  queue:priority\tSet job priority")
+	fmt.Println("  queue:stats\t\tShow queue statistics")
+	fmt.Println("  stats:chart\t\t\tGenerate usage chart")
+	fmt.Println("  stats:cleanup\t\tClean up old statistics")
+	fmt.Println("  stats:check\t\t\tCheck for performance anomalies")
+}

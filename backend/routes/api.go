@@ -26,6 +26,7 @@ func APIRoutes(app *framework.Application) {
 
 	// Mail
 	mailController, _ := controllers.NewMailController()
+	multiMailController, _ := controllers.NewMultiMailController()
 
 	// CMS
 	mediaController := controllers.NewMediaController()
@@ -75,6 +76,18 @@ func APIRoutes(app *framework.Application) {
 			r.GET("/api/mail/test", adapters.HertzToFramework(mailController.TestConnection))
 			r.GET("/api/mail/config", adapters.HertzToFramework(mailController.GetMailConfig))
 			r.GET("/api/mail/validate", adapters.HertzToFramework(mailController.ValidateEmail))
+		}
+
+		// Multi Mail (多服务器支持，推荐用于群发）
+		if multiMailController != nil {
+			r.POST("/api/multi-mail/send", adapters.HertzToFramework(multiMailController.SendMail))
+			r.POST("/api/multi-mail/send-bulk", adapters.HertzToFramework(multiMailController.SendBulkMail))
+			r.GET("/api/multi-mail/servers", adapters.HertzToFramework(multiMailController.GetServerStatus))
+			r.GET("/api/multi-mail/server/health", adapters.HertzToFramework(multiMailController.CheckServerHealth))
+			r.POST("/api/multi-mail/server/ban", adapters.HertzToFramework(multiMailController.BanServer))
+			r.POST("/api/multi-mail/server/unban", adapters.HertzToFramework(multiMailController.UnbanServer))
+			r.GET("/api/multi-mail/config", adapters.HertzToFramework(multiMailController.GetMailConfig))
+			r.GET("/api/multi-mail/test", adapters.HertzToFramework(multiMailController.TestConnection))
 		}
 
 		// CMS Public

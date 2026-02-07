@@ -88,6 +88,21 @@ func (app *Application) Boot() *Application {
 	// 初始化Redis
 	app.initRedis()
 
+	// 初始化PayPal
+	app.initPayPal()
+
+	// 初始化Stripe
+	app.initStripe()
+
+	// 初始化MoonPay
+	app.initMoonPay()
+
+	// 初始化Coinbase
+	app.initCoinbase()
+
+	// 初始化KuCoin
+	app.initKuCoin()
+
 	app.booted = true
 	return app
 }
@@ -330,5 +345,36 @@ func (app *Application) initRedis() {
 	app.Redis = redis.NewClient(redisConfig)
 	if err := app.Redis.Connect(); err != nil {
 		hlog.Warnf("Failed to connect to Redis: %v", err)
+	}
+}
+
+// initPayPal 初始化PayPal支付服务
+func (app *Application) initPayPal() {
+	if err := config.InitPayPal(); err != nil {
+		hlog.Warnf("Failed to initialize PayPal: %v", err)
+	}
+}
+
+// initStripe 初始化Stripe支付服务
+func (app *Application) initStripe() {
+	if err := config.InitStripe(); err != nil {
+		hlog.Warnf("Failed to initialize Stripe: %v", err)
+	}
+}
+
+// initMoonPay 初始化MoonPay支付服务
+func (app *Application) initMoonPay() {
+	config.InitMoonPay()
+}
+
+// initCoinbase 初始化Coinbase支付和交易服务
+func (app *Application) initCoinbase() {
+	config.InitCoinbase()
+}
+
+// initKuCoin 初始化KuCoin交易服务
+func (app *Application) initKuCoin() {
+	if err := config.InitKuCoin(); err != nil {
+		hlog.Warnf("Failed to initialize KuCoin: %v", err)
 	}
 }

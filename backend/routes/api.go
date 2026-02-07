@@ -35,6 +35,13 @@ func APIRoutes(app *framework.Application) {
 	menuController := controllers.NewMenuController()
 	commentController := controllers.NewCommentController()
 
+	// Payments
+	paymentController := controllers.NewPaymentController()
+	stripePaymentController := controllers.NewStripePaymentController()
+	moonPayController := controllers.NewMoonPayController()
+	coinbaseController := controllers.NewCoinbaseController()
+	kucoinController := &controllers.KuCoinController{}
+
 	// SEO
 	seoController := controllers.NewSEOController("http://localhost:8888")
 
@@ -84,6 +91,64 @@ func APIRoutes(app *framework.Application) {
 		r.GET("/api/comments", adapters.HertzToFramework(commentController.List))
 		r.GET("/api/comments/:id", adapters.HertzToFramework(commentController.Get))
 		r.POST("/api/comments", adapters.HertzToFramework(commentController.Create))
+
+		// Payments
+		r.GET("/api/payments", adapters.HertzToFramework(paymentController.ListPayments))
+		r.GET("/api/payments/:id", adapters.HertzToFramework(paymentController.GetPayment))
+		r.POST("/api/payments", adapters.HertzToFramework(paymentController.CreatePayment))
+		r.POST("/api/payments/capture/:orderID", adapters.HertzToFramework(paymentController.CapturePayment))
+		r.POST("/api/payments/:id/refund", adapters.HertzToFramework(paymentController.RefundPayment))
+		r.POST("/api/payments/webhook", adapters.HertzToFramework(paymentController.HandleWebhook))
+
+		// Stripe Payments
+		r.GET("/api/stripe/payments", adapters.HertzToFramework(stripePaymentController.ListPayments))
+		r.GET("/api/stripe/payments/:id", adapters.HertzToFramework(stripePaymentController.GetPayment))
+		r.POST("/api/stripe/payments/intent", adapters.HertzToFramework(stripePaymentController.CreatePaymentIntent))
+		r.POST("/api/stripe/payments/:paymentIntentID/confirm", adapters.HertzToFramework(stripePaymentController.ConfirmPayment))
+		r.POST("/api/stripe/payments/:id/refund", adapters.HertzToFramework(stripePaymentController.RefundPayment))
+		r.POST("/api/stripe/webhook", adapters.HertzToFramework(stripePaymentController.HandleWebhook))
+
+		// MoonPay Payments
+		r.GET("/api/moonpay/transactions", adapters.HertzToFramework(moonPayController.ListTransactions))
+		r.GET("/api/moonpay/transactions/:id", adapters.HertzToFramework(moonPayController.GetTransaction))
+		r.POST("/api/moonpay/transactions", adapters.HertzToFramework(moonPayController.CreateTransaction))
+		r.POST("/api/moonpay/quote", adapters.HertzToFramework(moonPayController.GetQuote))
+		r.POST("/api/moonpay/widget-url", adapters.HertzToFramework(moonPayController.GenerateWidgetURL))
+		r.POST("/api/moonpay/webhook", adapters.HertzToFramework(moonPayController.HandleWebhook))
+
+		// Coinbase Payments (Payment Links)
+		r.GET("/api/coinbase/payment-links", adapters.HertzToFramework(coinbaseController.ListPaymentLinks))
+		r.GET("/api/coinbase/payment-links/:id", adapters.HertzToFramework(coinbaseController.GetPaymentLink))
+		r.POST("/api/coinbase/payment-links", adapters.HertzToFramework(coinbaseController.CreatePaymentLink))
+		r.DELETE("/api/coinbase/payment-links/:id", adapters.HertzToFramework(coinbaseController.DeletePaymentLink))
+
+		// Coinbase Trading
+		r.GET("/api/coinbase/orders", adapters.HertzToFramework(coinbaseController.ListOrders))
+		r.GET("/api/coinbase/orders/:id", adapters.HertzToFramework(coinbaseController.GetOrder))
+		r.POST("/api/coinbase/orders", adapters.HertzToFramework(coinbaseController.CreateOrder))
+		r.POST("/api/coinbase/orders/:id/cancel", adapters.HertzToFramework(coinbaseController.CancelOrder))
+		r.GET("/api/coinbase/products", adapters.HertzToFramework(coinbaseController.GetProducts))
+		r.GET("/api/coinbase/products/:productId", adapters.HertzToFramework(coinbaseController.GetProduct))
+		r.GET("/api/coinbase/products/:productId/ticker", adapters.HertzToFramework(coinbaseController.GetTicker))
+		r.POST("/api/coinbase/webhook", adapters.HertzToFramework(coinbaseController.HandleWebhook))
+
+		// KuCoin Trading
+		r.GET("/api/kucoin/server-time", adapters.HertzToFramework(kucoinController.GetServerTime))
+		r.GET("/api/kucoin/symbols", adapters.HertzToFramework(kucoinController.GetSymbols))
+		r.GET("/api/kucoin/ticker", adapters.HertzToFramework(kucoinController.GetTicker))
+		r.GET("/api/kucoin/orderbook", adapters.HertzToFramework(kucoinController.GetOrderBook))
+		r.GET("/api/kucoin/trades", adapters.HertzToFramework(kucoinController.GetMarketTrades))
+		r.GET("/api/kucoin/klines", adapters.HertzToFramework(kucoinController.GetKlines))
+		r.GET("/api/kucoin/24h-stats", adapters.HertzToFramework(kucoinController.Get24HStats))
+		r.GET("/api/kucoin/accounts", adapters.HertzToFramework(kucoinController.GetAccounts))
+		r.GET("/api/kucoin/accounts/:accountId", adapters.HertzToFramework(kucoinController.GetAccountDetail))
+		r.POST("/api/kucoin/orders", adapters.HertzToFramework(kucoinController.CreateOrder))
+		r.DELETE("/api/kucoin/orders/:orderId", adapters.HertzToFramework(kucoinController.CancelOrder))
+		r.GET("/api/kucoin/orders/:orderId", adapters.HertzToFramework(kucoinController.GetOrder))
+		r.GET("/api/kucoin/orders", adapters.HertzToFramework(kucoinController.GetOpenOrders))
+		r.GET("/api/kucoin/orders/closed", adapters.HertzToFramework(kucoinController.GetClosedOrders))
+		r.POST("/api/kucoin/accounts/sync", adapters.HertzToFramework(kucoinController.SyncAccounts))
+		r.POST("/api/kucoin/balance/snapshot", adapters.HertzToFramework(kucoinController.CreateBalanceSnapshot))
 
 		// User
 		authGroup := r.Group("/user", middleware.JWTMiddleware())

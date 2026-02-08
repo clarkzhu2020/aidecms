@@ -3,14 +3,17 @@
     <NavBar />
     <RouterView />
     <Footer />
+    <!-- 浮动客服按钮 -->
+    <CustomerServiceChat v-if="showCustomerService" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
-import { onMounted } from 'vue'
+import CustomerServiceChat from './components/CustomerServiceChat.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 

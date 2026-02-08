@@ -2,12 +2,16 @@ package routes
 
 import (
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
 
 	controllers "github.com/clarkzhu2020/aidecms/app/Http/Controllers"
 	middleware "github.com/clarkzhu2020/aidecms/app/Http/Middleware"
 	"github.com/clarkzhu2020/aidecms/config"
 	"github.com/clarkzhu2020/aidecms/internal/app/adapters"
 	"github.com/clarkzhu2020/aidecms/internal/app/services"
+	"github.com/clarkzhu2020/aidecms/pkg/css"
 	"github.com/clarkzhu2020/aidecms/pkg/framework"
 )
 
@@ -48,6 +52,14 @@ func APIRoutes(app *framework.Application) {
 
 	// Web3 & Exchange
 	web3Controller := &controllers.Web3Controller{}
+
+	// Customer Service (智能客服系统)
+	var csController *controllers.CustomerServiceController
+	if getConfigBool("CSS_ENABLED", false) {
+		engine, wsManager := css.InitCustomerServiceSystem(app.DB, manager)
+		csController = controllers.NewCustomerServiceController()
+		csController.Init(engine, wsManager)
+	}
 	mdService := services.NewMarketDataService(app.ClickHouse)
 	exController := controllers.NewExchangeController(mdService)
 
@@ -94,6 +106,15 @@ func APIRoutes(app *framework.Application) {
 		r.GET("/api/posts", adapters.HertzToFramework(postController.List))
 		r.GET("/api/posts/:id", adapters.HertzToFramework(postController.Get))
 		r.GET("/api/categories", adapters.HertzToFramework(categoryController.List))
+
+		// Customer Service (智能客服系统)
+		if csController != nil {
+			r.GET("/api/css/ws", adapters.HertzToFramework(csController.WebSocket))
+			r.POST("/api/css/question", adapters.HertzToFramework(csController.SendQuestion))
+			r.GET("/api/css/history/:session_id", adapters.HertzToFramework(csController.GetHistory))
+			r.POST("/api/css/session/:session_id/close", adapters.HertzToFramework(csController.CloseSession))
+			r.GET("/api/css/status", adapters.HertzToFramework(csController.GetStatus))
+		}
 		r.GET("/api/categories/:id", adapters.HertzToFramework(categoryController.Get))
 		r.GET("/api/tags", adapters.HertzToFramework(tagController.List))
 		r.GET("/api/tags/:id", adapters.HertzToFramework(tagController.Get))
@@ -219,4 +240,46 @@ func APIRoutes(app *framework.Application) {
 			exGroup.GET("/all/price/:pair", adapters.HertzToFramework(exController.GetAllPrices))
 		}
 	})
+}
+
+// 配置辅助函数
+func getConfig(key, defaultValue string) string {
+	if value := os.Getenv(key); value != "" {
+		return value
+	}
+	return defaultValue
+}
+
+func getConfigInt(key string, defaultValue int) int {
+	if value := os.Getenv(key); value != "" {
+		if intVal, err := strconv.Atoi(value); err == nil {
+			return intVal
+		}
+	}
+	return defaultValue
+}
+
+func getConfigFloat(key string, defaultValue float64) float64 {
+	if value := os.Getenv(key); value != "" {
+		if floatVal, err := strconv.ParseFloat(value, 64); err == nil {
+			return floatVal
+		}
+	}
+	return defaultValue
+}
+
+func getConfigBool(key string, defaultValue bool) bool {
+	if value := os.Getenv(key); value != "" {
+		if boolVal, err := strconv.ParseBool(value); err == nil {
+			return boolVal
+		}
+	}
+	return defaultValue
+}
+
+func getConfigList(key string, defaultValue []string) []string {
+	if value := os.Getenv(key); value != "" {
+		return strings.Split(value, ",")
+	}
+	return defaultValue
 }

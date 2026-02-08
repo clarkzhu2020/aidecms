@@ -4,11 +4,13 @@ import App from './App.vue'
 import Home from './views/Home.vue'
 import Features from './views/Features.vue'
 import Docs from './views/Docs.vue'
+import CustomerServiceDemo from './views/CustomerServiceDemo.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/features', component: Features },
   { path: '/docs', component: Docs },
+  { path: '/customer-service-demo', component: CustomerServiceDemo },
 ]
 
 const router = createRouter({
